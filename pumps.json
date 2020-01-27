@@ -1,0 +1,7 @@
+{
+    "pump_1": {
+        "name": "Pump 1",
+        "pin": 69,
+        "value": "rum"
+    }
+}
