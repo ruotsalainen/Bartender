@@ -10,4 +10,4 @@ while True:
     sleep(1)
     red.off()
     blue.on()
-    sleep(1)
+    sleep(1/2)
