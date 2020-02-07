@@ -7,3 +7,5 @@ blue = PWMLED(4)
 
 red.pulse()
 blue.pulse()
+
+pause()
