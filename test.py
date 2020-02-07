@@ -8,4 +8,3 @@ while True:
     for i in range(1, 11):
         red.value = i/10
         blue.value = i/10
-        sleep(0.2)
