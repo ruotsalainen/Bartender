@@ -31,8 +31,8 @@ for i in range(10):
     sleep(value)
     red.on()
 
-    player1.when_activated = winner_1
-    player2.when_activated = winner_2
+    player1.wait_for_active = winner_1
+    player2.wait_for_active = winner_2
 
 print("game over")
 
