@@ -9,18 +9,27 @@ blue = PWMLED(4)
 player1 = Button(27)
 player2 = Button(18)
 
-time = random.uniform(5, 10)
-sleep(time)
-red.on()
+player1_score = 0
+player2_score = 0
 
-while True:
-    if player1.is_active:
-        print("Player 1 wins!")
-        break
-    if player2.is_active:
-        print("Player 2 wins!")
-        break
+def game():
+    global player1_score
+    global player2_score
 
-red.off()
+    time = random.uniform(5, 10)
+    sleep(time)
+    red.on()
 
-pause()
+    while True:
+        if player1.is_active:
+            print("Player 1 wins!")
+            player1_score += 1
+            break
+        if player2.is_active:
+            print("Player 2 wins!")
+            player2_score += 1
+            break
+
+    red.off()
+
+game()
