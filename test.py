@@ -15,14 +15,14 @@ player2_score = 0
 
 def winner_1():
     global player1_score
-    
+
     print("player1 won")
     player1_score +=1
     red.off()
     if player1_score == 5:
         print("player1 won")
     else:
-        game()
+        main()
 
 def winner_2():
     global player2_score
@@ -33,9 +33,9 @@ def winner_2():
     if player2_score == 5:
         print("player2 won")
     else:
-        game()
+        main()
 
-def game():
+def main():
 
     value = floor(random()*10)
     print(value)
@@ -45,4 +45,5 @@ def game():
     player1.wait_for_active = winner_1
     player2.wait_for_active = winner_2
 
-
+if __name__ == "__main__":
+    main()
