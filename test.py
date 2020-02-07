@@ -1,24 +1,27 @@
 from gpiozero import Button, PWMLED
 from time import sleep
 from signal import pause
+from random import random
+from math import floor
+
 
 red = PWMLED(17)
 blue = PWMLED(4)
-button1 = Button(18)
-button2 = Button(27)
+player1 = Button(27)
+player2 = Button(18)
 
-def blue_on():
-    blue.on()
-    sleep(2)
-    blue.off()
+def winner_1():
+    print("player1 won")
 
-def red_on():
-    red.on()
-    sleep(2)
-    red.off()
+def winner_2():
+    print("player2 won")
 
-button1.when_activated = blue_on
+value = floor(random()*10)
+print(value)
+sleep(value)
+red.on()
 
-button2.when_activated = red_on
+player1.when_activated = winner_1
+player2.when_activated = winner_2
 
 pause()
