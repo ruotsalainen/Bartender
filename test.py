@@ -21,3 +21,5 @@ while True:
         break
 
 red.off()
+
+pause()
