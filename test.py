@@ -10,21 +10,32 @@ blue = PWMLED(4)
 player1 = Button(27)
 player2 = Button(18)
 
-i = 0
+player1_score = 0
+player2_score = 0
 
 def winner_1():
-    global i
+    global player1_score
+    
     print("player1 won")
+    player1_score +=1
     red.off()
-    i += 1
+    if player1_score == 5:
+        print("player1 won")
+    else:
+        game()
 
 def winner_2():
-    global i
-    print("player2 won")
-    red.off()
-    i += 1
+    global player2_score
 
-while True:
+    print("player2 won")
+    player2_score +=1
+    red.off()
+    if player2_score == 5:
+        print("player2 won")
+    else:
+        game()
+
+def game():
 
     value = floor(random()*10)
     print(value)
@@ -34,5 +45,4 @@ while True:
     player1.wait_for_active = winner_1
     player2.wait_for_active = winner_2
 
-print("game over")
 
