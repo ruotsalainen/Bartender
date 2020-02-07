@@ -24,7 +24,7 @@ def winner_2():
     red.off()
     i += 1
 
-for i in range(10):
+while True:
 
     value = floor(random()*10)
     print(value)
