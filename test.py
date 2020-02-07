@@ -5,7 +5,11 @@ from signal import pause
 red = PWMLED(17)
 blue = PWMLED(4)
 
-red.pulse()
-blue.pulse()
+red.value = 1
+blue.value = 1
+red.value = 0.5
+blue.value = 0.5
+red.value = 0
+blue.value = 0
 
 pause()
