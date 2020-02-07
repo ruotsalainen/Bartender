@@ -12,9 +12,11 @@ player2 = Button(18)
 
 def winner_1():
     print("player1 won")
+    red.off()
 
 def winner_2():
     print("player2 won")
+    red.off()
 
 value = floor(random()*10)
 print(value)
