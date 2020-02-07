@@ -10,20 +10,29 @@ blue = PWMLED(4)
 player1 = Button(27)
 player2 = Button(18)
 
+i = 0
+
 def winner_1():
+    global i
     print("player1 won")
     red.off()
+    i += 1
 
 def winner_2():
+    global i
     print("player2 won")
     red.off()
+    i += 1
 
-value = floor(random()*10)
-print(value)
-sleep(value)
-red.on()
+for i in range(10):
 
-player1.when_activated = winner_1
-player2.when_activated = winner_2
+    value = floor(random()*10)
+    print(value)
+    sleep(value)
+    red.on()
 
-pause()
+    player1.when_activated = winner_1
+    player2.when_activated = winner_2
+
+print("game over")
+
