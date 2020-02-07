@@ -22,18 +22,18 @@ def game():
 
     while True:
         if player1.is_active:
-            print("Player 1 wins!")
+            print("point for player1")
             player1_score += 1
             break
         if player2.is_active:
-            print("Player 2 wins!")
+            print("point for player2")
             player2_score += 1
             break
 
     red.off()
 
 
-while player1_score or player2_score < 5:
+while player1_score and player2_score < 5:
     game()
 if player1_score == 5:
     print("player1 won")
