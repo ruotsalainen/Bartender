@@ -18,15 +18,15 @@ if selection == 1:
         blue.value = 0
         sleep(0.2)
 elif selection == 2:
-    while True:
-        red.blink(0.5)
-        blue.blink(0.2)
-        sleep(0.5)
+    red.blink()
+    blue.blink()
 elif selection == 3:
     while True:
         red.on()
         for i in range(1, 11):
             blue.value = i/10
+            sleep(0.1)
         blue.on()
         for i in range(1, 11):
             red.value = i/10
+            sleep(0.1)
