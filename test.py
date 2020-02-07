@@ -10,10 +10,12 @@ button2 = Button(27)
 def blue_on():
     blue.on()
     sleep(2)
+    blue.off()
 
 def red_on():
     red.on()
     sleep(2)
+    red.off()
 
 button1.when_activated = blue_on
 
