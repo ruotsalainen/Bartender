@@ -33,7 +33,7 @@ def game():
     red.off()
 
 
-while player1_score and player2_score < 5:
+while player1_score < 5 and player2_score < 5:
     game()
 if player1_score == 5:
     print("player1 won")
