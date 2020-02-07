@@ -1,32 +1,22 @@
-from gpiozero import LED, PWMLED
+from gpiozero import Button, PWMLED
 from time import sleep
 from signal import pause
 
 red = PWMLED(17)
 blue = PWMLED(4)
+button1 = Button(18)
+button2 = Button(27)
 
-selection = input("valitse testi 1, 2, 3\n")
-if selection == 1:
-    while True:
-        red.value = 1
-        blue.value = 1
-        sleep(0.2)
-        red.value = 0.5
-        blue.value = 0.5
-        sleep(0.2)
-        red.value = 0
-        blue.value = 0
-        sleep(0.2)
-elif selection == 2:
-    red.blink()
-    blue.blink()
-elif selection == 3:
-    while True:
-        for i in range(1, 11):
-            red.on()
-            blue.value = i/10
-            sleep(0.1)
-        for i in range(1, 11):
-            blue.on()
-            red.value = i/10
-            sleep(0.1)
+def blue_on():
+    blue.on()
+    sleep(2)
+
+def red_on():
+    red.on()
+    sleep(2)
+
+button1.when_activated = blue_on
+
+button2.when_activated = red_on
+
+pause()
