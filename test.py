@@ -32,4 +32,10 @@ def game():
 
     red.off()
 
-game()
+
+if player1_score or player2_score < 5:
+    game()
+elif player1_score == 5:
+    print("player1 won")
+elif player2_score == 5:
+    print("player2 won")
