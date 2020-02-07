@@ -5,7 +5,7 @@ from signal import pause
 red = PWMLED(17)
 blue = PWMLED(4)
 
-selection = input("valitse testi 1, 2, 3")
+selection = input("valitse testi 1, 2, 3\n")
 if selection == 1:
     while True:
         red.value = 1
@@ -22,11 +22,11 @@ elif selection == 2:
     blue.blink()
 elif selection == 3:
     while True:
-        red.on()
         for i in range(1, 11):
+            red.on()
             blue.value = i/10
             sleep(0.1)
-        blue.on()
         for i in range(1, 11):
+            blue.on()
             red.value = i/10
             sleep(0.1)
