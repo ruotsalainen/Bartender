@@ -42,8 +42,10 @@ def main():
     sleep(value)
     red.on()
 
-    player1.wait_for_active = winner_1
-    player2.wait_for_active = winner_2
+    player1.when_activated = winner_1
+    player2.when_activated = winner_2
+    pause()
+
 
 if __name__ == "__main__":
     main()
