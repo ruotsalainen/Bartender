@@ -38,7 +38,7 @@ while True:
     if button_right.is_active:
         modified = True
         if current_drink == 7:
-            current_drink == 0
+            current_drink = 0
         else:
             current_drink += 1
     
