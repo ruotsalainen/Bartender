@@ -52,8 +52,10 @@ while True:
         sleep(BOUNCE)
         modified = False
 
-    button_right.is_active = next_drink
+    if button_right.is_active:
+        next_drink()
     
-    button_left.is_active = make_drink
+    if button_left.is_active:
+        make_drink()
 
     
