@@ -14,41 +14,28 @@ lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
 
 BOUNCE = 0.5
 
-menu_options = {
-    1: "Tee juoma",
-    2: "Sulje"
-}
+drink_options = [
+	{"name": "Gin", "value": "gin"},
+	{"name": "Rum", "value": "rum"},
+	{"name": "Vodka", "value": "vodka"},
+	{"name": "Tequila", "value": "tequila"},
+	{"name": "Tonic Water", "value": "tonic"},
+	{"name": "Coke", "value": "coke"},
+	{"name": "Orange Juice", "value": "oj"},
+	{"name": "Margarita Mix", "value": "mmix"}
+]
 
-current_option = 1
-
-drinks = {
-    1:"Rum&Coke"
-}
-
-current_drink = 1
-
-
+current_drink = 0
 
 while True:
     lcd.clear()
-    lcd.write_string(menu_options[current_option])
+    lcd.write_string(drink_options[current_drink].get("name"))
     sleep(BOUNCE)
-    if button_right.wait_for_active():
-        lcd.clear()
-        if current_option == 2:
-            current_option -= 1
-        else:
-            current_option += 1
-    if button_left.wait_for_active():
-        if current_option == 1:
-            lcd.clear()
-            lcd.write_string(drinks[current_drink])
-            sleep(5)
 
-        elif current_option == 2:
-            lcd.clear()
-            lcd.write_string("haha")
-
+    if button_right.is_active:
+        if current_drink == 7:
+            current_drink -= 1
         else:
-            lcd.backlight_enabled = False
-            sys.exit()
+            current_drink += 1
+    
+
