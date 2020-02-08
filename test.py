@@ -7,7 +7,7 @@ from config import config_options
 
 button_select = Button(17)
 button_advance = Button(27)
-button_config = Button(27)
+button_config = Button(22)
 
 lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               cols=20, rows=4, dotsize=8,
