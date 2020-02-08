@@ -24,3 +24,4 @@ while True:
     if button.wait_for_active():
 
         current_option += 1
+        sleep(1)
