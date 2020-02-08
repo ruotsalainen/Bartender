@@ -30,6 +30,7 @@ modified = True
 
 while True:
     if modified:
+        lcd.clear()
         lcd.write_string(drink_options[current_drink].get("name"))
         sleep(BOUNCE)
         modified = False
@@ -37,13 +38,12 @@ while True:
     if button_right.is_active:
         modified = True
         if current_drink == 7:
-            current_drink == 1
-            lcd.clear()
+            current_drink == 0
         else:
             current_drink += 1
-            lcd.clear()
     
     if button_left.is_active:
+        modified = True
         drink_name = drink_options[current_drink].get("name")
-        lcd.write_string(drink_name + " coming right up!")
+        lcd.write_string(" coming right up!")
         sleep(2)
