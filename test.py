@@ -18,3 +18,5 @@ for i in range(10):
         lcd.write_string(strings[i])
         sleep(0.5)
         lcd.clear()
+
+lcd.backlight_enabled = False
