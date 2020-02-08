@@ -43,13 +43,14 @@ def make_drink():
     global current_drink
     modified = True
 
-    lcd.write_string(" coming right up!")
+    lcd.write_string("coming right up!")
     sleep(2)
 
 
 while True:
     if modified:
         lcd.clear()
+        lcd.cursor_pos = (2, 5)
         lcd.write_string(drink_options[current_drink].get("name"))
         sleep(BOUNCE)
         modified = False
@@ -58,6 +59,7 @@ while True:
         next_drink()
     
     if button_left.is_active:
+        lcd.cursor_pos = (3, 2)
         make_drink()
 
     
