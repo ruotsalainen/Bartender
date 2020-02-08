@@ -1,5 +1,6 @@
 from RPLCD.i2c import CharLCD
 from gpiozero import Button
+from time import sleep
 
 button = Button(17)
 
@@ -15,3 +16,5 @@ strings = ["Hello", "R2", "What", "would", "you", "like", "on", "your", "pizza"]
 for i in range(1, 10):
     if button.is_active:
         lcd.write_string(strings[i])
+sleep(2)
+lcd.clear()
