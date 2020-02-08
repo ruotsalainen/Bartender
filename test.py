@@ -2,6 +2,7 @@ from RPLCD.i2c import CharLCD
 from gpiozero import Button
 from time import sleep
 import sys
+from math import floor
 
 button_right = Button(17)
 button_left = Button(27)
@@ -50,8 +51,10 @@ def make_drink():
 while True:
     if modified:
         lcd.clear()
-        lcd.cursor_pos = (2, 5)
-        lcd.write_string(drink_options[current_drink].get("name"))
+        drink_name = drink_options[current_drink].get("name")
+        whitespace = floor((20-drink_name.len())/2)
+        lcd.cursor_pos = (1, whitespace)
+        lcd.write_string(drink_name)
         sleep(BOUNCE)
         modified = False
 
@@ -59,7 +62,7 @@ while True:
         next_drink()
     
     if button_left.is_active:
-        lcd.cursor_pos = (3, 2)
+        lcd.cursor_pos = (2, 2)
         make_drink()
 
     
