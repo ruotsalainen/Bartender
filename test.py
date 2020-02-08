@@ -31,5 +31,5 @@ while True:
         else:
             current_option += 1
     if button.is_held:
-        sys.exit()
         lcd.backlight_enabled = False
+	lcd.clear()
