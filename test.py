@@ -35,15 +35,23 @@ while True:
         sleep(BOUNCE)
         modified = False
 
-    if button_right.when_activated:
-        modified = True
-        if current_drink == 7:
-            current_drink = 0
-        else:
-            current_drink += 1
+    button_right.when_activated = next_drink
     
-    if button_left.when_activated:
-        modified = True
-        drink_name = drink_options[current_drink].get("name")
-        lcd.write_string(" coming right up!")
-        sleep(2)
+    button_left.when_activated = make_drink
+
+    
+def next_drink():
+    global modified
+    modified = True
+
+    if current_drink == 7:
+        current_drink = 0
+    else:
+        current_drink += 1
+
+def make_drink():
+    global modified
+    modified = True
+    
+    lcd.write_string(" coming right up!")
+    sleep(2)
