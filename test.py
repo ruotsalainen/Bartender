@@ -10,13 +10,14 @@ lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               auto_linebreaks=True,
               backlight_enabled=True)
 
+menu_options = {
+    1: "Tee juoma",
+    2: "Sulje"
+}
 
+current_option = 1
 
-strings = ["Hello", "R2", "What", "would", "you", "like", "on", "your", "pizza"]
-for i in range(9):
-    if button.wait_for_active():
-        lcd.write_string(strings[i])
-        sleep(0.5)
-        lcd.clear()
-
-lcd.backlight_enabled = False
+while True:
+    lcd.write_string(menu_options[current_option])
+    if button.is_active:
+        current_option += 1
