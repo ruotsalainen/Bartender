@@ -26,7 +26,7 @@ drink_options = [
 ]
 
 current_drink = 0
-modified = False
+modified = True
 
 while True:
     if modified:
