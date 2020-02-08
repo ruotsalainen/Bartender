@@ -30,6 +30,7 @@ modified = True
 
 def next_drink():
     global modified
+    global current_drink
     modified = True
 
     if current_drink == 7:
@@ -39,6 +40,7 @@ def next_drink():
 
 def make_drink():
     global modified
+    global current_drink
     modified = True
 
     lcd.write_string(" coming right up!")
