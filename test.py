@@ -24,4 +24,7 @@ while True:
     sleep(1)
     if button.wait_for_active():
         lcd.clear()
-        current_option += 1
+        if current_option == 2:
+            current_option -= 1
+        elif:
+            current_option += 1
