@@ -26,5 +26,5 @@ while True:
         lcd.clear()
         if current_option == 2:
             current_option -= 1
-        elif:
+        else:
             current_option += 1
