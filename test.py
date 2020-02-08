@@ -25,7 +25,7 @@ def next_drink():
     global current_drink
     modified = True
 
-    if current_drink == 7:
+    if current_drink == len(drink_list)-1:
         current_drink = 0
     else:
         current_drink += 1
