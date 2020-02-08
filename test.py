@@ -52,7 +52,7 @@ while True:
     if modified:
         lcd.clear()
         drink_name = drink_options[current_drink].get("name")
-        whitespace = int((20-len(drink_name)/2))
+        whitespace = int((20-len(drink_name))/2)
         lcd.cursor_pos = (1, whitespace)
         lcd.write_string(drink_name)
         sleep(BOUNCE)
