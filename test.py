@@ -35,14 +35,14 @@ while True:
         sleep(BOUNCE)
         modified = False
 
-    if button_right.is_active:
+    if button_right.when_activated:
         modified = True
         if current_drink == 7:
             current_drink = 0
         else:
             current_drink += 1
     
-    if button_left.is_active:
+    if button_left.when_activated:
         modified = True
         drink_name = drink_options[current_drink].get("name")
         lcd.write_string(" coming right up!")
