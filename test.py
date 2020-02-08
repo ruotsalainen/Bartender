@@ -21,7 +21,7 @@ print(menu_options[current_option])
 
 while True:
     lcd.write_string(menu_options[current_option])
+    sleep(1)
     if button.wait_for_active():
-
+        lcd.clear()
         current_option += 1
-        sleep(1)
