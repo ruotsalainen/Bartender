@@ -44,7 +44,7 @@ def make_drink():
     lcd.write_string(" coming right up!")
     sleep(2)
 
-    
+
 while True:
     if modified:
         lcd.clear()
@@ -52,8 +52,8 @@ while True:
         sleep(BOUNCE)
         modified = False
 
-    button_right.when_activated = next_drink
+    button_right.is_active = next_drink
     
-    button_left.when_activated = make_drink
+    button_left.is_active = make_drink
 
     
