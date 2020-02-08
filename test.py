@@ -32,4 +32,4 @@ while True:
             current_option += 1
     if button.is_held:
         lcd.backlight_enabled = False
-	lcd.clear()
+        sys.exit()
