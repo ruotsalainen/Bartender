@@ -16,5 +16,5 @@ strings = ["Hello", "R2", "What", "would", "you", "like", "on", "your", "pizza"]
 for i in range(10):
     if button.wait_for_active():
         lcd.write_string(strings[i])
-sleep(2)
-lcd.clear()
+        sleep(0.5)
+        lcd.clear()
