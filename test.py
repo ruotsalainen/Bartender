@@ -2,7 +2,7 @@ from RPLCD.i2c import CharLCD
 from gpiozero import Button
 from time import sleep
 import sys
-from Bartender.drinks import drink_list
+from drinks import drink_list
 
 button_right = Button(17)
 button_left = Button(27)
