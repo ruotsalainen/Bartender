@@ -43,6 +43,7 @@ def make_drink():
 def open_config():
     current_option = 0
     while True:
+        sleep(1)
         lcd.write_string(config_options[current_option].get("task"))
 
         if button_advance.is_active:
