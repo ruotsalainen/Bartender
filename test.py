@@ -28,18 +28,6 @@ drink_options = [
 current_drink = 0
 modified = True
 
-while True:
-    if modified:
-        lcd.clear()
-        lcd.write_string(drink_options[current_drink].get("name"))
-        sleep(BOUNCE)
-        modified = False
-
-    button_right.when_activated = next_drink
-    
-    button_left.when_activated = make_drink
-
-    
 def next_drink():
     global modified
     modified = True
@@ -52,6 +40,20 @@ def next_drink():
 def make_drink():
     global modified
     modified = True
-    
+
     lcd.write_string(" coming right up!")
     sleep(2)
+
+    
+while True:
+    if modified:
+        lcd.clear()
+        lcd.write_string(drink_options[current_drink].get("name"))
+        sleep(BOUNCE)
+        modified = False
+
+    button_right.when_activated = next_drink
+    
+    button_left.when_activated = make_drink
+
+    
