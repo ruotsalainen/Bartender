@@ -26,12 +26,16 @@ drink_options = [
 ]
 
 current_drink = 0
+modified = False
 
 while True:
-    lcd.write_string(drink_options[current_drink].get("name"))
-    sleep(BOUNCE)
+    if modified:
+        lcd.write_string(drink_options[current_drink].get("name"))
+        sleep(BOUNCE)
+        modified = False
 
     if button_right.is_active:
+        modified = True
         if current_drink == 7:
             current_drink == 1
             lcd.clear()
