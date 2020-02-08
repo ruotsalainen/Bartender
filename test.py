@@ -17,6 +17,8 @@ menu_options = {
 
 current_option = 1
 
+print(menu_options[current_option])
+
 while True:
     lcd.write_string(menu_options[current_option])
     if button.is_active:
