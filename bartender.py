@@ -90,7 +90,7 @@ def open_config():
             modified = True
             if current_option == 0:
                 clear()
-                lcd.cursor_pos = (1, 4)
+                lcd.cursor_pos = (1, 5)
                 lcd.write_string("Plumbing!")
                 sleep(2)
             if current_option == 1:
