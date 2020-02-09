@@ -17,3 +17,4 @@ smiley = (
 )
 
 lcd.create_char(0, smiley)
+lcd.write_string("\x03")
