@@ -47,6 +47,7 @@ def open_config():
     while True:
         sleep(1)
         if modified:
+            lcd.clear()
             lcd.write_string(config_options[current_option].get("task"))
             modified = False
 
