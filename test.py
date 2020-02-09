@@ -48,6 +48,7 @@ def open_config():
             lcd.clear()
             task_name = config_options[current_option].get("task")
             whitespace = int((20-len(task_name))/2)
+            lcd.cursor_pos = (1, whitespace)
             lcd.write_string(task_name)
             sleep(BOUNCE)
             modified = False
@@ -63,11 +64,11 @@ def open_config():
             modified = True
             if current_option == 0:
                 lcd.clear()
+                lcd.cursor_pos = (1, 0)
                 lcd.write_string("Flushing the system")
                 sleep(2)
             if current_option == 1:
                 lcd.display_enabled = False
-                lcd.close(clear=True)
                 exit()
         
         if button_config.is_active:
