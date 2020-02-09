@@ -104,13 +104,13 @@ def open_config():
 
 
 def greeting():
-	buzzer.on()
+	buzzer.toggle()
 	lcd.cursor_pos = (1, 7)
 	lcd.write_string("Hello!")
 	sleep(1)
 	lcd.cursor_pos = (2, 0)
 	lcd.write_string("My name is Giovanni.")
-	buzzer.off()
+	buzzer.toggle()
 	sleep(2)
 
 
