@@ -69,7 +69,7 @@ def open_config():
                 sleep(2)
             if current_option == 1:
                 lcd.clear()
-                lcd.cursor_pos(1, 7)
+                lcd.cursor_pos = (1, 7)
                 lcd.write_string("Ciao!")
                 sleep(2)
                 lcd.backlight_enabled = False
@@ -84,7 +84,7 @@ def greeting():
     lcd.cursor_pos = (1, 6)
     lcd.write_string("Hello!")
     sleep(1)
-    lcd.cursor_pos = (2, 1)
+    lcd.cursor_pos = (2, 0)
     lcd.write_string("My name is Giovanni.")
     sleep(2)
 
