@@ -34,7 +34,6 @@ def next_drink():
 
 def make_drink():
     global modified
-    global current_drink
     modified = True
 
     lcd.write_string("coming right up!")
@@ -53,7 +52,7 @@ def open_config():
 
         if button_advance.is_active:
             modified = True
-            if current_drink == len(config_options)-1:
+            if current_option == len(config_options)-1:
                 current_option = 0
             else:
                 current_option += 1
