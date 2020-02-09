@@ -35,8 +35,6 @@ def main():
 	drink_menu()
 
 # advance to the next drink in the list
-
-
 def next_drink():
     global modified
     global current_drink
@@ -48,8 +46,6 @@ def next_drink():
         current_drink += 1
 
 # makes the drink
-
-
 def make_drink():
     global modified
     modified = True
@@ -58,8 +54,6 @@ def make_drink():
     sleep(2)
 
 # opens the config menu
-
-
 def open_config():
     global modified
     modified = True
@@ -101,8 +95,6 @@ def open_config():
             break
 
 # system greeting at startup
-
-
 def greeting():
 	lcd.cursor_pos = (1, 7)
 	lcd.write_string("Hello!")
