@@ -116,7 +116,7 @@ def clear():
 	for row in range(1,2):
 		for col in range(1, 18):
 			lcd.cursor_pos = (row, col)
-			lcd.write_string(" ")
+			lcd.write_string("*")
 
 	while True:
 	    if modified:
@@ -135,7 +135,7 @@ def clear():
 	        make_drink()
 	
 	    if button_config.is_active:
-	        clear()
+	        lcd.clear()
 	        open_config()
 	        modified = True
 
