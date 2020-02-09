@@ -90,8 +90,8 @@ def open_config():
             modified = True
             if current_option == 0:
                 clear()
-                lcd.cursor_pos = (1, 0)
-                lcd.write_string("Flushing the system")
+                lcd.cursor_pos = (1, 4)
+                lcd.write_string("Plumbing!")
                 sleep(2)
             if current_option == 1:
                 clear()
@@ -117,7 +117,7 @@ def greeting():
 
 def clear():
     for row in range(1,3):
-        for col in range(1, 18):
+        for col in range(1, 19):
             lcd.cursor_pos = (row, col)
             lcd.write_string(" ")
 
