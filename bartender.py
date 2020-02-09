@@ -1,9 +1,12 @@
+import sys
+
 from RPLCD.i2c import CharLCD
 from gpiozero import Button, OutputDevice
 from time import sleep
-import sys
+
 from drinks import drink_list
 from config import config_options
+import ring
 
 # declaring buttons Button(GPIOpin)
 button_select = Button(17)
@@ -31,6 +34,7 @@ modified = True
 
 
 def main():
+	ring.draw_ring(lcd)
 	greeting()
 	drink_menu()
 
@@ -99,8 +103,8 @@ def greeting():
 	lcd.cursor_pos = (1, 7)
 	lcd.write_string("Hello!")
 	sleep(1)
-	lcd.cursor_pos = (2, 0)
-	lcd.write_string("My name is Giovanni.")
+	lcd.cursor_pos = (2, 3)
+	lcd.write_string("I am Giovanni")
 	sleep(2)
 
 
