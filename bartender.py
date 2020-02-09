@@ -108,7 +108,7 @@ def greeting():
 	sleep(2)
 
 def clear():
-	for row in range(1,2):
+	for row in range(1,3):
 		for col in range(1, 18):
 			lcd.cursor_pos = (row, col)
 			lcd.write_string(" ")
