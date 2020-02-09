@@ -81,7 +81,7 @@ def open_config():
             break
 
 def greeting():
-    lcd.cursor_pos = (1, 6)
+    lcd.cursor_pos = (1, 7)
     lcd.write_string("Hello!")
     sleep(1)
     lcd.cursor_pos = (2, 0)
