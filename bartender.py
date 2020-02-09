@@ -26,6 +26,10 @@ current_drink = 0
 # to avoid unnecessary rewrite to lcd
 modified = True
 
+def main():
+	greeting()
+	drink_menu()
+
 # advance to the next drink in the list
 def next_drink():
     global modified
@@ -122,5 +126,5 @@ def drink_menu():
 	        open_config()
 	        modified = True
 
-greeting()
-drink_menu()
+if __name__ == "__main__":
+    main()
