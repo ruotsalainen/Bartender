@@ -34,9 +34,9 @@ modified = True
 
 
 def main():
-	ring.draw_ring(lcd)
-	greeting()
-	drink_menu()
+    ring.draw_ring(lcd)
+    greeting()
+    drink_menu()
 
 # advance to the next drink in the list
 
@@ -84,13 +84,13 @@ def open_config():
             if current_option == len(config_options)-1:
                 current_option = 0
             else:
-            	current_option += 1
+                current_option += 1
 
         if button_select.is_active:
             modified = True
-			if current_option == 0:
+            if current_option == 0:
                 clear()
-				lcd.cursor_pos = (1, 0)
+                lcd.cursor_pos = (1, 0)
                 lcd.write_string("Flushing the system")
                 sleep(2)
             if current_option == 1:
@@ -99,7 +99,7 @@ def open_config():
                 lcd.write_string("Ciao!")
                 sleep(2)
                 lcd.backlight_enabled = False
-				lcd.clear()
+                lcd.clear()
                 exit()
 
         if button_config.is_active:
@@ -108,44 +108,44 @@ def open_config():
 
 # system greeting at startup
 def greeting():
-	lcd.cursor_pos = (1, 7)
-	lcd.write_string("Hello!")
-	sleep(1)
-	lcd.cursor_pos = (2, 3)
-	lcd.write_string("I am Giovanni.")
-	sleep(2)
+    lcd.cursor_pos = (1, 7)
+    lcd.write_string("Hello!")
+    sleep(1)
+    lcd.cursor_pos = (2, 3)
+    lcd.write_string("I am Giovanni.")
+    sleep(2)
 
 def clear():
-	for row in range(1,3):
-		for col in range(1, 18):
-			lcd.cursor_pos = (row, col)
-			lcd.write_string(" ")
+    for row in range(1,3):
+        for col in range(1, 18):
+            lcd.cursor_pos = (row, col)
+            lcd.write_string(" ")
 
 def drink_menu():
-	global modified
-	global current_drink
+    global modified
+    global current_drink
 
 
-	while True:
-	    if modified:
-	        clear()
-	        drink_name = drink_list[current_drink].get("name")
-	        whitespace = int((20-len(drink_name))/2)
-	        lcd.cursor_pos = (1, whitespace)
-	        lcd.write_string(drink_name)
-	        sleep(BOUNCE)
-	        modified = False
-	    if button_advance.is_active:
-	        next_drink()
+    while True:
+        if modified:
+            clear()
+            drink_name = drink_list[current_drink].get("name")
+            whitespace = int((20-len(drink_name))/2)
+            lcd.cursor_pos = (1, whitespace)
+            lcd.write_string(drink_name)
+            sleep(BOUNCE)
+            modified = False
+        if button_advance.is_active:
+            next_drink()
 
-	    if button_select.is_active:
-	        lcd.cursor_pos = (2, 2)
-	        make_drink()
-	
-	    if button_config.is_active:
-	        clear()
-	        open_config()
-	        modified = True
+        if button_select.is_active:
+            lcd.cursor_pos = (2, 2)
+            make_drink()
+    
+        if button_config.is_active:
+            clear()
+            open_config()
+            modified = True
 
 if __name__ == "__main__":
     main()
