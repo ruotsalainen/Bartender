@@ -107,16 +107,16 @@ def greeting():
 	lcd.write_string("I am Giovanni.")
 	sleep(2)
 
+def clear():
+	for row in range(1,2):
+		for col in range(1, 18):
+			lcd.cursor_pos = (row, col)
+			lcd.write_string(" ")
 
 def drink_menu():
 	global modified
 	global current_drink
 
-def clear():
-	for row in range(1,2):
-		for col in range(1, 18):
-			lcd.cursor_pos = (row, col)
-			lcd.write_string("*")
 
 	while True:
 	    if modified:
