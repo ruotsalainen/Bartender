@@ -7,7 +7,7 @@ from config import config_options
 
 button_select = Button(17)
 button_advance = Button(27)
-button_config = Button(22)
+button_config = Button(22, bounce_time=0.5)
 
 lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               cols=20, rows=4, dotsize=8,
@@ -44,7 +44,6 @@ def open_config():
     modified = True
     current_option = 0
     while True:
-        sleep(1)
         if modified:
             lcd.clear()
             lcd.write_string(config_options[current_option].get("task"))
@@ -62,10 +61,13 @@ def open_config():
             if current_option == 0:
                 lcd.clear()
                 lcd.write_string("Flushing the system")
+                sleep(2)
             if current_option == 1:
+                lcd.close
                 exit()
         
         if button_config.is_active:
+            modified = True
             break
 
 
