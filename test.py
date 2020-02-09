@@ -41,18 +41,24 @@ def make_drink():
     sleep(2)
 
 def open_config():
+    global modified
+    modified = True
     current_option = 0
     while True:
         sleep(1)
-        lcd.write_string(config_options[current_option].get("task"))
+        if modified:
+            lcd.write_string(config_options[current_option].get("task"))
+            modified = False
 
         if button_advance.is_active:
+            modified = True
             if current_drink == len(config_options)-1:
                 current_option = 0
             else:
                 current_option += 1
 
         if button_select.is_active:
+            modified = True
             if current_option == 0:
                 lcd.clear()
                 lcd.write_string("Flushing the system")
@@ -80,6 +86,7 @@ while True:
         make_drink()
     
     if button_config.is_active:
+        lcd.clear()
         open_config()
         modified = True
 
