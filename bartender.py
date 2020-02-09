@@ -64,7 +64,7 @@ def open_config():
     current_option = 0
     while True:
         if modified:
-            lcd.clear()
+            clear()
             task_name = config_options[current_option].get("task")
             whitespace = int((20-len(task_name))/2)
             lcd.cursor_pos = (1, whitespace)
@@ -82,16 +82,17 @@ def open_config():
         if button_select.is_active:
             modified = True
             if current_option == 0:
-                lcd.clear()
+            	clear()
                 lcd.cursor_pos = (1, 0)
                 lcd.write_string("Flushing the system")
                 sleep(2)
             if current_option == 1:
-                lcd.clear()
+                clear()
                 lcd.cursor_pos = (1, 7)
                 lcd.write_string("Ciao!")
                 sleep(2)
                 lcd.backlight_enabled = False
+				lcd.clear()
                 exit()
 
         if button_config.is_active:
@@ -135,7 +136,7 @@ def drink_menu():
 	        make_drink()
 	
 	    if button_config.is_active:
-	        lcd.clear()
+	        clear()
 	        open_config()
 	        modified = True
 
