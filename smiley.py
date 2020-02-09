@@ -136,4 +136,5 @@ for i in range(2):
     lcd.cursor_pos = (row, 0)
     lcd.write_string(chr(7))
     row -= 1
+    sleep(time)
 sleep(2)
