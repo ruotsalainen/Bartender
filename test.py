@@ -64,7 +64,7 @@ def open_config():
                 lcd.write_string("Flushing the system")
                 sleep(2)
             if current_option == 1:
-                lcd.close
+                lcd.close()
                 exit()
         
         if button_config.is_active:
