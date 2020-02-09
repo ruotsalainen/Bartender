@@ -68,7 +68,10 @@ def open_config():
                 lcd.write_string("Flushing the system")
                 sleep(2)
             if current_option == 1:
+                lcd.write_string("R2 on homo")
+                sleep(2)
                 lcd.display_enabled = False
+                sleep(0.5)
                 exit()
         
         if button_config.is_active:
