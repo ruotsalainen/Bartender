@@ -1,5 +1,5 @@
 from RPLCD.i2c import CharLCD
-from gpiozero import Button
+from gpiozero import Button, Buzzer
 from time import sleep
 import sys
 from drinks import drink_list
@@ -9,6 +9,9 @@ from config import config_options
 button_select = Button(17)
 button_advance = Button(27)
 button_config = Button(22)
+
+# declaring buzzer
+buzzer = Buzzer(pin=23)
 
 # creating an object of the class CharLCD
 lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
@@ -26,11 +29,14 @@ current_drink = 0
 # to avoid unnecessary rewrite to lcd
 modified = True
 
+
 def main():
 	greeting()
 	drink_menu()
 
 # advance to the next drink in the list
+
+
 def next_drink():
     global modified
     global current_drink
@@ -42,6 +48,8 @@ def next_drink():
         current_drink += 1
 
 # makes the drink
+
+
 def make_drink():
     global modified
     modified = True
@@ -50,6 +58,8 @@ def make_drink():
     sleep(2)
 
 # opens the config menu
+
+
 def open_config():
     global modified
     modified = True
@@ -85,20 +95,22 @@ def open_config():
                 sleep(2)
                 lcd.backlight_enabled = False
                 exit()
-                
-        
+
         if button_config.is_active:
             modified = True
             break
 
 # system greeting at startup
+
+
 def greeting():
-    lcd.cursor_pos = (1, 7)
-    lcd.write_string("Hello!")
-    sleep(1)
-    lcd.cursor_pos = (2, 0)
-    lcd.write_string("My name is Giovanni.")
-    sleep(2)
+	buzzer.blink_device(0.5, 0.5, 3)
+	lcd.cursor_pos = (1, 7)
+	lcd.write_string("Hello!")
+	sleep(1)
+	lcd.cursor_pos = (2, 0)
+	lcd.write_string("My name is Giovanni.")
+	sleep(2)
 
 
 def drink_menu():
