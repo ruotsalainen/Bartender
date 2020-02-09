@@ -132,4 +132,3 @@ def draw_ring(lcd):
 	    lcd.write_string(chr(7))
 	    row -= 1
 	    sleep(time)
-	sleep(2)
