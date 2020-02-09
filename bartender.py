@@ -110,10 +110,10 @@ def drink_menu():
 	        lcd.write_string(drink_name)
 	        sleep(BOUNCE)
 	        modified = False
-	    if button_select.is_active:
+	    if button_advance.is_active:
 	        next_drink()
 
-	    if button_advance.is_active:
+	    if button_select.is_active:
 	        lcd.cursor_pos = (2, 2)
 	        make_drink()
 	
