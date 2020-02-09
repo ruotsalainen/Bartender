@@ -104,7 +104,7 @@ def greeting():
 	lcd.write_string("Hello!")
 	sleep(1)
 	lcd.cursor_pos = (2, 3)
-	lcd.write_string("I am Giovanni")
+	lcd.write_string("I am Giovanni.")
 	sleep(2)
 
 
@@ -112,9 +112,15 @@ def drink_menu():
 	global modified
 	global current_drink
 
+def clear():
+	for row in range(1,2):
+		for col in range(1, 18):
+			lcd.cursor_pos = (row, col)
+			lcd.write_string(" ")
+
 	while True:
 	    if modified:
-	        lcd.clear()
+	        clear()
 	        drink_name = drink_list[current_drink].get("name")
 	        whitespace = int((20-len(drink_name))/2)
 	        lcd.cursor_pos = (1, whitespace)
@@ -129,7 +135,7 @@ def drink_menu():
 	        make_drink()
 	
 	    if button_config.is_active:
-	        lcd.clear()
+	        clear()
 	        open_config()
 	        modified = True
 
