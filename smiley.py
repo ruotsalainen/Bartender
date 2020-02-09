@@ -95,6 +95,7 @@ left = (
 	0b11000
 )
 
+time = 0.05
 
 lcd.create_char(0, top_left)
 lcd.create_char(1, top)
@@ -106,29 +107,29 @@ lcd.create_char(6, bottom_left)
 lcd.create_char(7, left)
 
 lcd.write_string(chr(0))
-sleep(0.1)
+sleep(time)
 for i in range(18):
     lcd.write_string(chr(1))
-    sleep(0.1)
+    sleep(time)
 lcd.write_string(chr(2))
 lcd.cursor_pos = (1, 19)
 for i in range(2):
     lcd.write_string(chr(3))
     lcd.cursor_pos = (2, 19)
-    sleep(0.1)
+    sleep(time)
 lcd.cursor_pos = (3, 19)
 lcd.write_string(chr(4))
-sleep(0.1)
+sleep(time)
 
 col = 18
 for i in range(18):
     lcd.cursor_pos = (3, col)
     lcd.write_string(chr(5))
     col -= 1
-    sleep(0.1)
+    sleep(time)
 lcd.cursor_pos = (3, 0)
 lcd.write_string(chr(6))
-sleep(0.1)
+sleep(time)
 
 row = 2
 for i in range(2):
