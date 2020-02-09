@@ -69,7 +69,7 @@ def open_config():
                 sleep(2)
             if current_option == 1:
                 lcd.clear()
-                lcd.write_string("R2 on homo")
+                lcd.write_string("Ciao!")
                 sleep(2)
                 lcd.backlight_enabled = False
                 exit()
@@ -79,6 +79,15 @@ def open_config():
             modified = True
             break
 
+def greeting():
+    lcd.cursor_pos = (1, 6)
+    lcd.write_string("Hello!")
+    sleep(0.5)
+    lcd.cursor_pos = (2, 1)
+    lcd.write_string("My name is Giovanni.")
+
+
+greeting()
 
 while True:
     if modified:
