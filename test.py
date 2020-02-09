@@ -7,7 +7,7 @@ from config import config_options
 
 button_select = Button(17)
 button_advance = Button(27)
-button_config = Button(22, bounce_time=2)
+button_config = Button(22)
 
 lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               cols=20, rows=4, dotsize=8,
@@ -47,6 +47,7 @@ def open_config():
         if modified:
             lcd.clear()
             lcd.write_string(config_options[current_option].get("task"))
+            sleep(BOUNCE)
             modified = False
 
         if button_advance.is_active:
