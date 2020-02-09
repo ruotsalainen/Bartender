@@ -126,7 +126,7 @@ for i in range(18):
     lcd.write_string(chr(5))
     col -= 1
     sleep(0.1)
-lcd.cursor_pos = (0, 3)
+lcd.cursor_pos = (3, 0)
 lcd.write_string(chr(6))
 sleep(0.1)
 
@@ -136,4 +136,3 @@ for i in range(4):
     lcd.write_string(chr(7))
     row -= 1
 sleep(2)
-lcd.clear()
