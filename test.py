@@ -6,6 +6,5 @@ lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               auto_linebreaks=True,
               backlight_enabled=True)
 
-while True:
-    text = "kissa"
-    lcd.write_string(text)
+text = input("")
+lcd.write_string(text)
