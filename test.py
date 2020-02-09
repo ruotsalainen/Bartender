@@ -36,7 +36,7 @@ def make_drink():
     global modified
     modified = True
 
-    lcd.write_string("coming right up!")
+    lcd.write_string("Coming right up!")
     sleep(2)
 
 def open_config():
@@ -46,7 +46,9 @@ def open_config():
     while True:
         if modified:
             lcd.clear()
-            lcd.write_string(config_options[current_option].get("task"))
+            task_name = config_options[current_option].get("task")
+            whitespace = int((20-len(task_name))/2)
+            lcd.write_string(task_name)
             sleep(BOUNCE)
             modified = False
 
@@ -64,7 +66,8 @@ def open_config():
                 lcd.write_string("Flushing the system")
                 sleep(2)
             if current_option == 1:
-                lcd.close()
+                lcd.display_enabled = False
+                lcd.close(clear=True)
                 exit()
         
         if button_config.is_active:
