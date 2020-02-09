@@ -39,6 +39,8 @@ def main():
 	drink_menu()
 
 # advance to the next drink in the list
+
+
 def next_drink():
     global modified
     global current_drink
@@ -50,6 +52,8 @@ def next_drink():
         current_drink += 1
 
 # makes the drink
+
+
 def make_drink():
     global modified
     modified = True
@@ -58,10 +62,13 @@ def make_drink():
     sleep(2)
 
 # opens the config menu
+
+
 def open_config():
     global modified
     modified = True
     current_option = 0
+
     while True:
         if modified:
             clear()
@@ -77,13 +84,13 @@ def open_config():
             if current_option == len(config_options)-1:
                 current_option = 0
             else:
-                current_option += 1
+            	current_option += 1
 
         if button_select.is_active:
             modified = True
-            if current_option == 0:
-            	clear()
-                lcd.cursor_pos = (1, 0)
+			if current_option == 0:
+                clear()
+				lcd.cursor_pos = (1, 0)
                 lcd.write_string("Flushing the system")
                 sleep(2)
             if current_option == 1:
