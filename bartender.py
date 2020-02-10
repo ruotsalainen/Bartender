@@ -1,7 +1,7 @@
 import sys
 
 from RPLCD.i2c import CharLCD
-from gpiozero import Button, OutputDevice
+from gpiozero import Button
 from time import sleep
 
 from drinks import drink_list
@@ -13,8 +13,6 @@ button_select = Button(17)
 button_advance = Button(27)
 button_config = Button(22)
 
-# declaring buzzer
-buzzer = OutputDevice(pin=23)
 
 # creating an object of the class CharLCD
 lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
@@ -32,15 +30,33 @@ current_drink = 0
 # to avoid unnecessary rewrite to lcd
 modified = True
 
-
+# starting point
 def main():
     ring.draw_ring(lcd)
     greeting()
     drink_menu()
 
+# system greeting at startup
+def greeting():
+    lcd.cursor_pos = (1, 7)
+    lcd.write_string("Hello!")
+    sleep(1)
+    lcd.cursor_pos = (2, 3)
+    lcd.write_string("I am Giovanni.")
+    sleep(2)
+
+def clear():
+    for row in range(1,3):
+        for col in range(1, 19):
+            lcd.cursor_pos = (row, col)
+            lcd.write_string(" ")
+
+def drink_menu():
+    global modified
+    global current_drink
+
+
 # advance to the next drink in the list
-
-
 def next_drink():
     global modified
     global current_drink
@@ -52,8 +68,6 @@ def next_drink():
         current_drink += 1
 
 # makes the drink
-
-
 def make_drink():
     global modified
     modified = True
@@ -62,8 +76,6 @@ def make_drink():
     sleep(2)
 
 # opens the config menu
-
-
 def open_config():
     global modified
     modified = True
@@ -105,25 +117,6 @@ def open_config():
         if button_config.is_active:
             modified = True
             break
-
-# system greeting at startup
-def greeting():
-    lcd.cursor_pos = (1, 7)
-    lcd.write_string("Hello!")
-    sleep(1)
-    lcd.cursor_pos = (2, 3)
-    lcd.write_string("I am Giovanni.")
-    sleep(2)
-
-def clear():
-    for row in range(1,3):
-        for col in range(1, 19):
-            lcd.cursor_pos = (row, col)
-            lcd.write_string(" ")
-
-def drink_menu():
-    global modified
-    global current_drink
 
 
     while True:
