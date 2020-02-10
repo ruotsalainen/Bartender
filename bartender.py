@@ -45,15 +45,12 @@ def greeting():
     lcd.write_string("I am Giovanni.")
     sleep(2)
 
+# clear screen, leave ring
 def clear():
     for row in range(1,3):
         for col in range(1, 19):
             lcd.cursor_pos = (row, col)
             lcd.write_string(" ")
-
-def drink_menu():
-    global modified
-    global current_drink
 
 
 # advance to the next drink in the list
@@ -118,6 +115,10 @@ def open_config():
             modified = True
             break
 
+# opens the drink menu
+def drink_menu():
+    global modified
+    global current_drink
 
     while True:
         if modified:
