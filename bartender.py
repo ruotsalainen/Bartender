@@ -39,36 +39,36 @@ class Bartender():
         self.modified = True
 
     # starting point
-    def run(self, lcd, greeting, drink_menu):
-        ring.draw_ring(lcd)
-        greeting()
-        drink_menu()
+    def run(self):
+        ring.draw_ring(self.lcd)
+        self.greeting(self.lcd)
+        self.drink_menu()
 
     # system greeting at startup
     def greeting(self, lcd):
-        lcd.cursor_pos = (1, 7)
-        lcd.write_string("Hello!")
+        self.lcd.cursor_pos = (1, 7)
+        self.lcd.write_string("Hello!")
         sleep(1)
-        lcd.cursor_pos = (2, 3)
-        lcd.write_string("I am Giovanni.")
+        self.lcd.cursor_pos = (2, 3)
+        self.lcd.write_string("I am Giovanni.")
         sleep(2)
 
     # clear screen, leave ring
     def clear(self, lcd):
         for row in range(1,3):
             for col in range(1, 19):
-                lcd.cursor_pos = (row, col)
-                lcd.write_string(" ")
+                self.lcd.cursor_pos = (row, col)
+                self.lcd.write_string(" ")
 
 
     # advance to the next drink in the list
     def next_drink(self):
         self.modified = True
 
-        if current_drink == len(drink_list)-1:
-            current_drink = 0
+        if self.current_drink == len(drink_list)-1:
+            self.current_drink = 0
         else:
-            current_drink += 1
+            self.current_drink += 1
 
     # makes the drink
     def make_drink(self):
