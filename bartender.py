@@ -80,34 +80,34 @@ class Bartender():
 
     # opens the config menu
     def open_config(self):
-        modified = True
-        current_option = 0
+        self.modified = True
+        self.current_option = 0
 
         while True:
-            if modified:
+            if self.modified:
                 self.clear(self)
-                task_name = config_options[current_option].get("task")
+                task_name = config_options[self.current_option].get("task")
                 whitespace = int((20-len(task_name))/2)
                 self.lcd.cursor_pos = (1, whitespace)
                 self.lcd.write_string(task_name)
                 sleep(BOUNCE)
-                modified = False
+                self.modified = False
 
             if self.button_advance.is_active:
-                modified = True
-                if current_option == len(config_options)-1:
-                    current_option = 0
+                self.modified = True
+                if self.current_option == len(config_options)-1:
+                    self.current_option = 0
                 else:
-                    current_option += 1
+                    self.current_option += 1
 
             if self.button_select.is_active:
-                modified = True
-                if current_option == 0:
+                self.modified = True
+                if self.current_option == 0:
                     self.clear(self)
                     self.lcd.cursor_pos = (1, 5)
                     self.lcd.write_string("Plumbing!")
                     sleep(2)
-                if current_option == 1:
+                if self.current_option == 1:
                     self.clear(self)
                     self.lcd.cursor_pos = (1, 7)
                     self.lcd.write_string("Ciao!")
@@ -117,7 +117,7 @@ class Bartender():
                     exit()
 
             if self.button_config.is_active:
-                modified = True
+                self.modified = True
                 break
 
     # opens the drink menu
@@ -126,14 +126,14 @@ class Bartender():
         self.greeting(self.lcd)
 
         while True:
-            if modified:
+            if self.modified:
                 self.clear(self)
                 drink_name = drink_list[self.current_drink].get("name")
                 whitespace = int((20-len(drink_name))/2)
                 self.lcd.cursor_pos = (1, whitespace)
                 self.lcd.write_string(drink_name)
                 sleep(BOUNCE)
-                modified = False
+                self.modified = False
             if self.button_advance.is_active:
                 self.next_drink()
 
@@ -144,7 +144,7 @@ class Bartender():
             if self.button_config.is_active:
                 self.clear(self)
                 self.open_config()
-                modified = True
+                self.modified = True
 
 bartender = Bartender()
 bartender.drink_menu()
