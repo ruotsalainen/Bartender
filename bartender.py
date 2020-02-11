@@ -72,7 +72,6 @@ class Bartender():
 
     # makes the drink
     def make_drink(self):
-        global modified
         self.modified = True
 
         self.lcd.write_string("Coming right up!")
