@@ -7,7 +7,7 @@ lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               auto_linebreaks=True,
               backlight_enabled=True)
 
-a,b,c = (
+frame1,frame2,frame3 = (
     0b11111,
 	0b10001,
 	0b11001,
@@ -35,7 +35,9 @@ a,b,c = (
 	0b10001,
 	0b11111
 )
-
+lcd.create_char(0, frame1)
+lcd.create_char(1, frame2)
+lcd.create_char(2, frame3)
 
 while True:
     for i in range(3):
