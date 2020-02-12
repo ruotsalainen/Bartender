@@ -63,6 +63,7 @@ try:
 		lcd.write_string(chr(3))
 		lcd.cursor_pos = (0, 9)
 		lcd.write_string(chr(3))
+		sleep(2)
 except KeyboardInterrupt:
 	lcd.backlight_enabled = False
 	lcd.close()
