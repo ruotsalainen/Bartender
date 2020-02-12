@@ -150,8 +150,6 @@ class System():
             lcd.write_string(chr(7))
             row -= 1
             sleep(time)
-        self.cheers(lcd)
-        
 
     def cheers(self, lcd):
         lcd.create_char(0, self.frame1)
@@ -166,7 +164,9 @@ class System():
         sleep(1)
         lcd.cursor_pos = (2, 3)
         lcd.write_string("I am Giovanni.")
-        sleep(2)
+        sleep(1)
+        self.cheers(lcd)
+        sleep(1)
 
     def goodbye(self, lcd):
         self.clear(lcd)
