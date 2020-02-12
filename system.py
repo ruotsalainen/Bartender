@@ -150,6 +150,7 @@ class System():
             lcd.write_string(chr(7))
             row -= 1
             sleep(time)
+        self.cheers(lcd)
         
 
     def cheers(self, lcd):
