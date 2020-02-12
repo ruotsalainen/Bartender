@@ -4,7 +4,7 @@ from RPLCD.i2c import CharLCD
 from gpiozero import Button
 from time import sleep
 
-from Bartender.menu import Menu
+from menu import Menu
 
 BOUNCE = 0.5
 BUTTON_SELECT_PIN = 17
