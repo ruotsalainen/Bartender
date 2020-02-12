@@ -46,5 +46,7 @@ while True:
         lcd.clear()
         lcd.cursor_pos = (1, 6 + i)
         lcd.write_string(chr(i))
-        sleep(1)
+        lcd.cursor_pos = (1, 11 - i)
+        lcd.write_string(chr(max(i-2, 2-i)))
+        sleep(0.5)
     
