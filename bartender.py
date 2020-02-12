@@ -40,7 +40,6 @@ class Bartender(Menu, System):
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)
-        sleep(2)
         self.cheers(self.lcd)
         self.hello(self.lcd)
         try:

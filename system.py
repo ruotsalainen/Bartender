@@ -157,13 +157,7 @@ class System():
         lcd.create_char(1, self.frame2)
         lcd.create_char(2, self.frame3)
 
-        for j in range(3):
-            self.clear(lcd)
-            lcd.cursor_pos = (1, 6 + j)
-            lcd.write_string(chr(j))
-            lcd.cursor_pos = (1, 11 - j)
-            lcd.write_string(chr(max(j-2, 2-j)))
-            sleep(0.3)
+
 
     def hello(self, lcd):
         lcd.cursor_pos = (1, 7)
