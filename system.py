@@ -89,14 +89,14 @@ class System():
         lcd.write_string(chr(0))
         sleep(time)
 
-        for i in range(18):
+        for _ in range(18):
             lcd.write_string(chr(1))
             sleep(time)
 
         lcd.write_string(chr(2))
         lcd.cursor_pos = (1, 19)
 
-        for i in range(2):
+        for _ in range(2):
             lcd.write_string(chr(3))
             lcd.cursor_pos = (2, 19)
             sleep(time)
@@ -106,7 +106,7 @@ class System():
         sleep(time)
 
         col = 18
-        for i in range(18):
+        for _ in range(18):
             lcd.cursor_pos = (3, col)
             lcd.write_string(chr(5))
             col -= 1
@@ -117,7 +117,7 @@ class System():
         sleep(time)
 
         row = 2
-        for i in range(2):
+        for _ in range(2):
             lcd.cursor_pos = (row, 0)
             lcd.write_string(chr(7))
             row -= 1
