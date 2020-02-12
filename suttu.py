@@ -7,7 +7,7 @@ lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               auto_linebreaks=True,
               backlight_enabled=True)
 
-a = (
+a,b,c = (
     0b11111,
 	0b10001,
 	0b11001,
@@ -16,9 +16,7 @@ a = (
 	0b10001,
 	0b10001,
 	0b11111
-)
-
-b = (
+),(
     0b11111,
 	0b10001,
 	0b10001,
@@ -27,9 +25,7 @@ b = (
 	0b10001,
 	0b10001,
 	0b11111
-)
-
-c = (
+),(
     0b11111,
 	0b10001,
 	0b10011,
