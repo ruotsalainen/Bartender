@@ -2,7 +2,7 @@ from time import sleep
 
 class System():
     def __init__(self):
-        self.top_left,self.top, self.top_right, self.right, self.bottom_right, self.bottom, self.bottom_left, self.left = (
+        self.top_left, self.top, self.top_right, self.right, self.bottom_right, self.bottom, self.bottom_left, self.left = (
             0b00011,
             0b01111,
             0b11111,
@@ -11,8 +11,7 @@ class System():
             0b11000,
             0b11000,
             0b11000
-        ),
-        (
+        ),(
             0b11111,
             0b11111,
             0b11111,
@@ -21,8 +20,7 @@ class System():
             0b00000,
             0b00000,
             0b00000
-        ),
-        (
+        ),(
             0b11000,
             0b11110,
             0b11111,
@@ -31,8 +29,7 @@ class System():
             0b00011,
             0b00011,
             0b00011
-        ),
-        (
+        ),(
             0b00011,
             0b00011,
             0b00011,
@@ -41,8 +38,7 @@ class System():
             0b00011,
             0b00011,
             0b00011
-        ),
-        (
+        ),(
             0b00011,
             0b00011,
             0b00011,
@@ -51,8 +47,7 @@ class System():
             0b11111,
             0b11110,
             0b11000
-        ),
-        (
+        ),(
             0b00000,
             0b00000,
             0b00000,
@@ -61,8 +56,7 @@ class System():
             0b11111,
             0b11111,
             0b11111
-        ),
-        (
+        ),(
             0b11000,
             0b11000,
             0b11000,
@@ -71,8 +65,7 @@ class System():
             0b11111,
             0b01111,
             0b00011
-        ),
-        (
+        ),(
             0b11000,
             0b11000,
             0b11000,
