@@ -40,22 +40,11 @@ c = (
 	0b11111
 )
 
-lcd.create_char(0, a)
-lcd.create_char(1, b)
-lcd.create_char(2, c)
-lcd.write_string(chr(0))
-lcd.cursor_pos = (0, 2)
-lcd.write_string(chr(1))
-lcd.cursor_pos = (0, 4)
-lcd.write_string(chr(2))
 
-
-lcd.cursor_pos = (0, 6)
 while True:
-    lcd.write_string(chr(0))
-    sleep(0.2)
-    lcd.write_string(chr(1))
-    sleep(0.2)
-    lcd.write_string(chr(2))
-    sleep(0.2)
+    for i in range(3):
+        lcd.clear()
+        lcd.cursor_pos = (1, 6)
+        lcd.write_string(chr(i))
+        sleep(0.2)
     
