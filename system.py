@@ -152,27 +152,29 @@ class System():
             sleep(time)
 
     def cheers(self, lcd):
-        lcd.create_char(1, self.frame1)
-        lcd.create_char(2, self.frame2)
-        lcd.create_char(3, self.frame3)
-        for i in range(1,4):
+        # temporarily creating new characters for animation
+        lcd.create_char(0, self.frame1)
+        lcd.create_char(1, self.frame2)
+        lcd.create_char(2, self.frame3)
+        for i in range(3):
             lcd.clear()
-            lcd.cursor_pos = (1, 5 + i)
+            lcd.cursor_pos = (1, 6 + i)
             lcd.write_string(chr(i))
-            lcd.cursor_pos = (1, 10 - i)
-            lcd.write_string(chr(max(i-3, 3-i)))
+            lcd.cursor_pos = (1, 11 - i)
+            lcd.write_string(chr(max(i-2, 2-i)))
             sleep(0.5)
-
-
+        # returning old characters
+        lcd.create_char(0, self.top_left)
+        lcd.create_char(1, self.top)
+        lcd.create_char(2, self.top_right)
+        
     def hello(self, lcd):
         lcd.cursor_pos = (1, 7)
         lcd.write_string("Hello!")
         sleep(1)
         lcd.cursor_pos = (2, 3)
         lcd.write_string("I am Giovanni.")
-        sleep(1)
-        self.cheers(lcd)
-        sleep(1)
+        sleep(2)
 
     def goodbye(self, lcd):
         self.clear(lcd)
