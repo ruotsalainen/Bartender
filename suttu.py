@@ -35,9 +35,9 @@ frame1,frame2,frame3 = (
 	0b10001,
 	0b11111
 )
-lcd.create_char(0, frame1)
-lcd.create_char(1, frame3)
-lcd.create_char(2, frame2)
+lcd.create_char(0, frame2)
+lcd.create_char(1, frame1)
+lcd.create_char(2, frame3)
 
 try:
 	while True:
