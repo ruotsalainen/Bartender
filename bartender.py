@@ -38,6 +38,7 @@ class Bartender(Menu):
         sleep(BOUNCE)
 
     def run(self):
+        self.draw_frame(self.lcd, 0.05)
         self.hello(self.lcd)
         try:
             while True:
