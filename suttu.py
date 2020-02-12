@@ -36,15 +36,19 @@ frame1,frame2,frame3 = (
 	0b11111
 )
 lcd.create_char(0, frame1)
-lcd.create_char(1, frame2)
-lcd.create_char(2, frame3)
+lcd.create_char(1, frame3)
+lcd.create_char(2, frame2)
 
-while True:
-    for i in range(3):
-        lcd.clear()
-        lcd.cursor_pos = (1, 6 + i)
-        lcd.write_string(chr(i))
-        lcd.cursor_pos = (1, 11 - i)
-        lcd.write_string(chr(max(i-2, 2-i)))
-        sleep(0.5)
+try:
+	while True:
+		for i in range(3):
+			lcd.clear()
+			lcd.cursor_pos = (1, 6 + i)
+			lcd.write_string(chr(i))
+			lcd.cursor_pos = (1, 11 - i)
+			lcd.write_string(chr(max(i-2, 2-i)))
+			sleep(0.5)
+except KeyboardInterrupt:
+	lcd.backlight_enabled = False
+	lcd.close()
     
