@@ -152,10 +152,16 @@ class System():
             sleep(time)
 
     def cheers(self, lcd):
-        lcd.create_char(0, self.frame1)
-        lcd.create_char(1, self.frame2)
-        lcd.create_char(2, self.frame3)
-
+        lcd.create_char(1, self.frame1)
+        lcd.create_char(2, self.frame2)
+        lcd.create_char(3, self.frame3)
+        for i in range(1,4):
+            lcd.clear()
+            lcd.cursor_pos = (1, 5 + i)
+            lcd.write_string(chr(i))
+            lcd.cursor_pos = (1, 10 - i)
+            lcd.write_string(chr(max(i-3, 3-i)))
+            sleep(0.5)
 
 
     def hello(self, lcd):
