@@ -1,4 +1,5 @@
 from RPLCD.i2c import CharLCD
+from time import sleep
 
 lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
               cols=20, rows=4, dotsize=8,
@@ -47,3 +48,14 @@ lcd.cursor_pos = (0, 2)
 lcd.write_string(chr(1))
 lcd.cursor_pos = (0, 4)
 lcd.write_string(chr(2))
+
+
+lcd.cursor_pos = (0, 6)
+while True:
+    lcd.write_string(chr(0))
+    sleep(0.2)
+    lcd.write_string(chr(1))
+    sleep(0.2)
+    lcd.write_string(chr(2))
+    sleep(0.2)
+    
