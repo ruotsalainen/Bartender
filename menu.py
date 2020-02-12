@@ -3,7 +3,7 @@ from frame import Frame
 
 class Menu(Frame):
     def __init__(self):
-        super.__init__()
+        super().__init__()
 
     def hello(self, lcd):
         lcd.cursor_pos = (1, 7)
