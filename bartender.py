@@ -6,7 +6,7 @@ from time import sleep
 
 from menu import Menu
 
-BOUNCE = 0.5
+BOUNCE = 0.1
 BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_CONFIG_PIN = 22
@@ -38,10 +38,12 @@ class Bartender(Menu):
         sleep(BOUNCE)
 
     def run(self):
+        self.hello(self.lcd)
         try:
             while True:
                 self.startInterrupts()
         except KeyboardInterrupt:
+            self.lcd.backlight_enabled = False
             self.lcd.close()
 
 
