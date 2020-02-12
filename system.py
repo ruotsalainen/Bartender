@@ -1,6 +1,6 @@
 from time import sleep
 
-class Frame():
+class System():
     def __init__(self):
         self.top_left = (
             0b00011,
@@ -129,3 +129,25 @@ class Frame():
             lcd.write_string(chr(7))
             row -= 1
             sleep(time)
+
+    def hello(self, lcd):
+        lcd.cursor_pos = (1, 7)
+        lcd.write_string("Hello!")
+        sleep(1)
+        lcd.cursor_pos = (2, 3)
+        lcd.write_string("I am Giovanni.")
+        sleep(2)
+
+    def goodbye(self, lcd):
+        self.clear(lcd)
+        lcd.cursor_pos = (1, 7)
+        lcd.write_string("Ciao!")
+        sleep(2)
+        lcd.backlight_enabled = False
+        lcd.clear()
+
+    def clear(self, lcd):
+        for row in range(1,3):
+            for col in range(1, 19):
+                lcd.cursor_pos = (row, col)
+                lcd.write_string(" ")

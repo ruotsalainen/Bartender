@@ -5,13 +5,14 @@ from gpiozero import Button
 from time import sleep
 
 from menu import Menu
+from system import System
 
 BOUNCE = 0.1
 BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_CONFIG_PIN = 22
 
-class Bartender(Menu):
+class Bartender(Menu, System):
     def __init__(self):
         super().__init__()
 
@@ -44,6 +45,7 @@ class Bartender(Menu):
             while True:
                 self.startInterrupts()
         except KeyboardInterrupt:
+            self.goodbye(self.lcd)
             self.lcd.backlight_enabled = False
             self.lcd.close()
 
