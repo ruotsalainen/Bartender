@@ -44,7 +44,7 @@ c = (
 while True:
     for i in range(3):
         lcd.clear()
-        lcd.cursor_pos = (1, 6)
+        lcd.cursor_pos = (1, 6 + i)
         lcd.write_string(chr(i))
-        sleep(0.2)
+        sleep(1)
     
