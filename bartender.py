@@ -34,6 +34,8 @@ class Bartender(Menu):
             print("button_select is active")
         if self.button_config.is_active:
             print("button_config is active")
+        
+        sleep(BOUNCE)
 
     def run(self):
         try:
