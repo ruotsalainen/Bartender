@@ -177,6 +177,7 @@ class System():
         lcd.cursor_pos = (2, 3)
         lcd.write_string("I am Giovanni.")
         sleep(2)
+        self.clear(lcd)
 
     # goodbye message
     def goodbye(self, lcd):
