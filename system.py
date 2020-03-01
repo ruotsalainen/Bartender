@@ -151,7 +151,6 @@ class System():
             row -= 1
             sleep(time)
 
-    # FIXME
     def cheers(self, lcd):
         # temporarily creating new characters for animation
         lcd.create_char(0, self.frame1)
