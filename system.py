@@ -105,7 +105,7 @@ class System():
         )
 
     def draw_frame(self, lcd, time):
-        lcd.create_char(0, self.top_left)
+        lcd.create_char(0, self.top)
         lcd.create_char(1, self.top)
         lcd.create_char(2, self.top_right)
         lcd.create_char(3, self.right)
