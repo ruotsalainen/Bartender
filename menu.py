@@ -5,6 +5,7 @@ from drinks import drink_list
 # menu component that contains menu functionality
 class Menu():
     def __init__(self):
+        super().__init__()
         self.in_drink_menu = True
         self.current_drink = 0
 

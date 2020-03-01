@@ -2,6 +2,7 @@ from time import sleep
 
 class System():
     def __init__(self):
+        super().__init__()
         self.top_left, self.top, self.top_right, self.right, self.bottom_right, self.bottom, self.bottom_left, self.left = (
             0b00011,
             0b01111,
@@ -105,7 +106,7 @@ class System():
         )
 
     def draw_frame(self, lcd, time):
-        lcd.create_char(0, self.top)
+        lcd.create_char(0, self.top_left)
         lcd.create_char(1, self.top)
         lcd.create_char(2, self.top_right)
         lcd.create_char(3, self.right)
