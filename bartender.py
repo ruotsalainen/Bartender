@@ -7,7 +7,7 @@ from time import sleep
 from menu import Menu
 from system import System
 
-BOUNCE = 0.1
+BOUNCE = 0.2
 BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_CONFIG_PIN = 22
@@ -30,7 +30,11 @@ class Bartender(Menu):
 
     def startInterrupts(self):
         if self.button_advance.is_active:
-            print(self.advance_button_pressed())
+            # returns the writable string, and a padding value
+            string_to_lcd, padding = self.advance_button_pressed()
+            self.clear(self.lcd)
+            self.lcd.cursor_pos = (1, padding)
+            self.lcd.write_string(string_to_lcd)
         if self.button_select.is_active:
             print(self.select_button_pressed())
         if self.button_config.is_active:

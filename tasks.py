@@ -1,4 +1,4 @@
-config_options = [
+system_tasks = [
     {
         "task_id": 900,
         "task": "Flush system"
