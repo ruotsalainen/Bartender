@@ -36,9 +36,12 @@ class Bartender(Menu):
             self.lcd.cursor_pos = (1, padding)
             self.lcd.write_string(string_to_lcd)
         if self.button_select.is_active:
-            # returns the dict of ingredients for the selected drink
-            ingredients = self.select_button_pressed()
-            self.make_drink(ingredients)
+            # returns the dict of ingredients for the selected drink OR the task_id
+            selection_details = self.select_button_pressed()
+            if self.in_drink_menu:
+                self.make_drink(selection_details)
+            else:
+                self.execute_task(selection_details)
         if self.button_tasks.is_active:
             # returns drink menu/task menu item0 and padding
             string_to_lcd, padding = self.tasks_button_pressed()
@@ -54,9 +57,20 @@ class Bartender(Menu):
         self.lcd.write_string("Coming right up!")
         sleep(2)
         self.lcd.cursor_pos = (2, 2)
-        self.lcd.write_string("               ")
-        
+        self.lcd.write_string("                ")
 
+    def execute_task(self, task_id):
+        if task_id == 900:
+            self.clear(self.lcd)
+            self.lcd.cursor_pos = (1, 5)
+            self.lcd.write_string("Flushing!")
+            sleep(2)
+            current_task_name = self.current_task[self.current_task]["task"]
+            padding = int((20-len(current_task_name))/2)
+            self.lcd.cursor_pos = (1, padding)
+            self.lcd.write_string(current_task_name)
+        elif task_id == 901:
+            self.goodbye(self.lcd)
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)
