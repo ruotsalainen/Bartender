@@ -38,10 +38,10 @@ class Menu(System):
         if self.in_drink_menu:
             self.in_drink_menu = not self.in_drink_menu
             self.current_task = 0
-            padding = int((20-len(drink_list[self.current_drink]["name"]))/2)
+            padding = int((20-len(system_tasks[self.current_task]["task"]))/2)
             return system_tasks[self.current_task]["task"], padding
         else:
             self.in_drink_menu = not self.in_drink_menu
             self.current_drink = 0
-            padding = int((20-len(system_tasks[self.current_task]["task"]))/2)
+            padding = int((20-len(drink_list[self.current_drink]["name"]))/2)
             return drink_list[self.current_drink]["name"], padding
