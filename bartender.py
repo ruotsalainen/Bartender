@@ -6,6 +6,8 @@ from time import sleep
 
 from menu import Menu
 from system import System
+from tasks import system_tasks
+from drinks import drink_list
 
 BOUNCE = 0.2
 BUTTON_SELECT_PIN = 17
@@ -65,7 +67,7 @@ class Bartender(Menu):
             self.lcd.cursor_pos = (1, 5)
             self.lcd.write_string("Flushing!")
             sleep(2)
-            current_task_name = self.current_task[self.current_task]["task"]
+            current_task_name = system_tasks[self.current_task]["task"]
             padding = int((20-len(current_task_name))/2)
             self.lcd.cursor_pos = (1, padding)
             self.lcd.write_string(current_task_name)
