@@ -9,7 +9,7 @@ class Menu(System):
         super().__init__()
         self.in_drink_menu = True
         self.current_drink = 0
-        self.current_option = 0
+        self.current_task = 0
 
     def init_menu(self, lcd):
         padding = int((20-len(drink_list[self.current_drink]["name"]))/2)
@@ -22,21 +22,23 @@ class Menu(System):
             padding = int((20-len(drink_list[self.current_drink]["name"]))/2)
             return drink_list[self.current_drink]["name"], padding
         else:
-            self.current_option += 1
-            return system_tasks[self.current_option]["task"]
+            self.current_task += 1
+            return system_tasks[self.current_task]["task"]
 
     def select_button_pressed(self):
         if self.in_drink_menu:
             return drink_list[self.current_drink]["ingredients"]
         else:
-            return system_tasks[self.current_option]["task_id"]
+            return system_tasks[self.current_task]["task_id"]
 
-    def config_button_pressed(self):
+    def tasks_button_pressed(self):
         if self.in_drink_menu:
             self.in_drink_menu = not self.in_drink_menu
-            self.current_option = 0
-            return system_tasks[self.current_option]["task"]
+            self.current_task = 0
+            padding = int((20-len(drink_list[self.current_drink]["name"]))/2)
+            return system_tasks[self.current_task]["task"], padding
         else:
             self.in_drink_menu = not self.in_drink_menu
             self.current_drink = 0
-            return drink_list[self.current_drink]["name"]
+            padding = int((20-len(system_tasks[self.current_task]["name"]))/2)
+            return drink_list[self.current_drink]["name"], padding
