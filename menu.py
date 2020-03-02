@@ -19,11 +19,14 @@ class Menu(System):
     def advance_button_pressed(self):
         if self.in_drink_menu:
             self.current_drink += 1
-            padding = int((20-len(drink_list[self.current_drink]["name"]))/2)
-            return drink_list[self.current_drink]["name"], padding
+            current_drink_name = drink_list[self.current_drink]["name"]
+            padding = int((20-len(current_drink_name))/2)
+            return current_drink_name, padding
         else:
             self.current_task += 1
-            return system_tasks[self.current_task]["task"], padding
+            current_task_name = system_tasks[self.current_task]["task"]
+            padding = int((20-len(current_task_name))/2)
+            return current_task_name, padding
 
     def select_button_pressed(self):
         if self.in_drink_menu:
