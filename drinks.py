@@ -1,3 +1,4 @@
+# placeholder list of drinks
 drink_list = [
 	{
 		"name": "Rum & Coke",

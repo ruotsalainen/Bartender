@@ -2,6 +2,7 @@ from time import sleep
 
 class System():
     def __init__(self):
+        super().__init__()
         self.top_left, self.top, self.top_right, self.right, self.bottom_right, self.bottom, self.bottom_left, self.left = (
             0b00011,
             0b01111,
@@ -168,6 +169,7 @@ class System():
         lcd.create_char(1, self.top)
         lcd.create_char(2, self.top_right)
         
+    # welcome message, from Giovanni
     def hello(self, lcd):
         lcd.cursor_pos = (1, 7)
         lcd.write_string("Hello!")
@@ -175,7 +177,9 @@ class System():
         lcd.cursor_pos = (2, 3)
         lcd.write_string("I am Giovanni.")
         sleep(2)
+        self.clear(lcd)
 
+    # goodbye message
     def goodbye(self, lcd):
         self.clear(lcd)
         lcd.cursor_pos = (1, 7)
@@ -184,6 +188,7 @@ class System():
         lcd.backlight_enabled = False
         lcd.clear()
 
+    # custom clear function to clear all but frame
     def clear(self, lcd):
         for row in range(1,3):
             for col in range(1, 19):
