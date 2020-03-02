@@ -43,6 +43,7 @@ class Bartender(Menu):
             # returns drink menu/task menu item0 and padding
             string_to_lcd, padding = self.tasks_button_pressed()
             self.clear(self.lcd)
+            self.lcd.cursor_pos = (1, padding)
             self.lcd.write_string(string_to_lcd)
 
         sleep(BOUNCE)

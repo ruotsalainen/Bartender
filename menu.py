@@ -23,7 +23,7 @@ class Menu(System):
             return drink_list[self.current_drink]["name"], padding
         else:
             self.current_task += 1
-            return system_tasks[self.current_task]["task"]
+            return system_tasks[self.current_task]["task"], padding
 
     def select_button_pressed(self):
         if self.in_drink_menu:
