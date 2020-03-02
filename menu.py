@@ -40,5 +40,5 @@ class Menu(System):
         else:
             self.in_drink_menu = not self.in_drink_menu
             self.current_drink = 0
-            padding = int((20-len(system_tasks[self.current_task]["name"]))/2)
+            padding = int((20-len(system_tasks[self.current_task]["task"]))/2)
             return drink_list[self.current_drink]["name"], padding
