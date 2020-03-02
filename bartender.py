@@ -49,8 +49,14 @@ class Bartender(Menu):
         sleep(BOUNCE)
 
     def make_drink(self, ingredients):
-        # TODO
-        pass
+        print(ingredients)
+        self.lcd.cursor_pos = (2, 2)
+        self.lcd.write_string("Coming right up!")
+        sleep(2)
+        self.lcd.cursor_pos = (2, 2)
+        self.lcd.write_string("               ")
+        
+
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)
