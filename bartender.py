@@ -77,7 +77,7 @@ class Bartender(Menu):
     def run(self):
         self.draw_frame(self.lcd, 0.05)
         #self.cheers(self.lcd)
-        self.hello(self.lcd)
+        #self.hello(self.lcd)
         self.init_menu(self.lcd)
         try:
             while True:
