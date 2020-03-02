@@ -12,7 +12,7 @@ BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_CONFIG_PIN = 22
 
-class Bartender(Menu, System):
+class Bartender(Menu):
     def __init__(self):
         super().__init__()
 
@@ -30,11 +30,11 @@ class Bartender(Menu, System):
 
     def startInterrupts(self):
         if self.button_advance.is_active:
-            print("button_advance active")
+            print(self.advance_button_pressed())
         if self.button_select.is_active:
-            print("button_select is active")
+            print(self.select_button_pressed())
         if self.button_config.is_active:
-            print("button_config is active")
+            print(self.config_button_pressed())
         
         sleep(BOUNCE)
 
