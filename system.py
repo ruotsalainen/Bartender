@@ -187,6 +187,7 @@ class System():
         sleep(2)
         lcd.backlight_enabled = False
         lcd.clear()
+        exit()
 
     # custom clear function to clear all but frame
     def clear(self, lcd):
