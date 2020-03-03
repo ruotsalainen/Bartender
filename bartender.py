@@ -92,8 +92,11 @@ class Bartender(Menu):
         for pump in pumps_list:
             if pump["value"] == ingredient["ingredient"]:
                 pump_pin = pump["pin"]
+                # TODO
+                # toggle relay on
                 print(pump["name"] + " on pin " + str(pump_pin) + " is running")
                 sleep(timeout)
+                # toggle relay off
                 print(pump["name"] + " off")
 
     def run(self):
