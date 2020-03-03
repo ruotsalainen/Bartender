@@ -91,7 +91,7 @@ class Bartender(Menu):
         for pump in pumps_list:
             if pump["value"] == ingredient["ingredient"]:
                 pump_pin = pump["pin"]
-                print(pump["name"] + " on pin " + pump_pin + " is running")
+                print(pump["name"] + " on pin " + str(pump_pin) + " is running")
                 sleep(timeout)
                 print(pump["name"] + " off")
 
