@@ -2,14 +2,18 @@ import sys
 
 from RPLCD.i2c import CharLCD
 from gpiozero import Button
-from time import sleep
+from multiprocessing.dummy import Pool
+from time import sleep, time
 
 from menu import Menu
 from system import System
 from tasks import system_tasks
 from drinks import drink_list
+from pumps import pumps_list
 
 BOUNCE = 0.2
+FLOWRATE = 3.3  # ml/sec
+
 BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_TASKS_PIN = 22
@@ -62,6 +66,7 @@ class Bartender(Menu):
         self.lcd.cursor_pos = (2, 2)
         self.lcd.write_string("                ")
 
+
     # executes a task based on id
     def execute_task(self, task_id):
         if task_id == 900:
@@ -75,6 +80,21 @@ class Bartender(Menu):
             self.lcd.write_string(current_task_name)
         elif task_id == 901:
             self.goodbye(self.lcd)
+
+    def spawn_threads(self, ingredients):
+        pool = Pool(6)
+        pool.map(self.run_pump, ingredients)
+        pool.close()
+        pool.join()
+
+    def run_pump(self, ingredient):
+        timeout = ingredient["amount"] / FLOWRATE
+        for pump in pumps_list:
+            if pump["value"] == ingredient["ingredient"]:
+                pump_pin = pump["pin"]
+                print(pump["name"] + " on pin " + pump_pin + " is running")
+                sleep(timeout)
+                print(pump["name"] + " off")
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)

@@ -1,16 +1,23 @@
 from multiprocessing.dummy import Pool
-from time import sleep
+from time import sleep, time
+from pumps import pumps
+from drinks import drink_list
 
-drinks = [{"name": "GT", "ingredients":[{"value": "gin", "amount":20},{"value":"tonic", "amount": 50}]}]
+
 
 def test(ingredient):
-    for _ in range(5):
-        print(ingredient["value"])
-        sleep(1)
-    return ingredient["value"]
+    timeout = ingredient["amount"] / 3.34
+    for pump in pumps:
+        if pump["value"] == ingredient["ingredient"]:
+            timeout_start = time()
 
-pool = Pool(4)
+            while time() < timeout_start + timeout:
+                print(".")
+                sleep(1)
+            print(ingredient["ingredient"] + " ready")
+            print(time() - timeout_start)
+pool = Pool(6)
 
-results = pool.map(test, drinks[0]["ingredients"])
+pool.map(test, drink_list[2]["ingredients"])
 pool.close()
 pool.join()
