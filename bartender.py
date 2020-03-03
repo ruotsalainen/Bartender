@@ -14,6 +14,7 @@ BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_TASKS_PIN = 22
 
+
 class Bartender(Menu):
     def __init__(self):
         super().__init__()
@@ -25,10 +26,10 @@ class Bartender(Menu):
 
         # creating an object of the class CharLCD
         self.lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
-                    cols=20, rows=4, dotsize=8,
-                    charmap='A02',
-                    auto_linebreaks=True,
-                    backlight_enabled=True)
+                           cols=20, rows=4, dotsize=8,
+                           charmap='A02',
+                           auto_linebreaks=True,
+                           backlight_enabled=True)
 
     def startInterrupts(self):
         if self.button_advance.is_active:
@@ -38,7 +39,7 @@ class Bartender(Menu):
             self.lcd.cursor_pos = (1, padding)
             self.lcd.write_string(string_to_lcd)
         if self.button_select.is_active:
-            # returns the dict of ingredients for the selected drink OR the task_id
+            # returns the list of ingredients for the selected drink OR the task_id
             selection_details = self.select_button_pressed()
             if self.in_drink_menu:
                 self.make_drink(selection_details)
@@ -61,6 +62,7 @@ class Bartender(Menu):
         self.lcd.cursor_pos = (2, 2)
         self.lcd.write_string("                ")
 
+    # executes a task based on id
     def execute_task(self, task_id):
         if task_id == 900:
             self.clear(self.lcd)
@@ -76,8 +78,8 @@ class Bartender(Menu):
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)
-        #self.cheers(self.lcd)
-        #self.hello(self.lcd)
+        # self.cheers(self.lcd)
+        # self.hello(self.lcd)
         self.init_menu(self.lcd)
         try:
             while True:
