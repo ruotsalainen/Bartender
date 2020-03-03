@@ -85,6 +85,7 @@ class Bartender(Menu):
         pool.map(self.run_pump, ingredients)
         pool.close()
         pool.join()
+        print("Drink ready")
 
     def run_pump(self, ingredient):
         timeout = ingredient["amount"] / FLOWRATE

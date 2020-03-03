@@ -28,5 +28,15 @@ pumps_list =  [
         "name": "pump6",
         "pin": 74,
         "value": "tequila"
+    },
+    {
+        "name": "pump7",
+        "pin": 75,
+        "value": "tonic"
+    },
+    {
+        "name": "pump8",
+        "pin": 76,
+        "value": "mmix"
     }
 ]
