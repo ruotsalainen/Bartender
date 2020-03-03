@@ -59,13 +59,12 @@ class Bartender(Menu):
         sleep(BOUNCE)
 
     def make_drink(self, ingredients):
-        print(ingredients)
         self.lcd.cursor_pos = (2, 2)
         self.lcd.write_string("Coming right up!")
         sleep(2)
         self.lcd.cursor_pos = (2, 2)
         self.lcd.write_string("                ")
-
+        self.spawn_threads(ingredients)
 
     # executes a task based on id
     def execute_task(self, task_id):
