@@ -64,7 +64,7 @@ class Bartender(Menu):
         sleep(2)
         self.lcd.cursor_pos = (2, 2)
         self.lcd.write_string("                ")
-        self.spawn_threads(ingredients)
+        self.run_threads(ingredients)
 
     # executes a task based on id
     def execute_task(self, task_id):
@@ -80,7 +80,7 @@ class Bartender(Menu):
         elif task_id == 901:
             self.goodbye(self.lcd)
 
-    def spawn_threads(self, ingredients):
+    def run_threads(self, ingredients):
         pool = Pool(6)
         pool.map(self.run_pump, ingredients)
         pool.close()
