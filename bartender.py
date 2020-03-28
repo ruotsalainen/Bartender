@@ -100,13 +100,14 @@ class Bartender(Menu):
                 active_pump = self.get_pump(pump["name"])
 
                 # toggle relay on
-                active_pump.on()
-                print(pump["name"] + " is running")
-                sleep(timeout)
+                if active_pump is not null:
+                    active_pump.on()
+                    print(pump["name"] + " is running")
+                    sleep(timeout)
 
-                # toggle relay off
-                active_pump.off()
-                print(pump["name"] + " off")
+                    # toggle relay off
+                    active_pump.off()
+                    print(pump["name"] + " off")
 
     def get_pump(self, name):
         if name == "pump_rum":
