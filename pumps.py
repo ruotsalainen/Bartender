@@ -5,7 +5,7 @@ pumps_list =  [
         "value": "rum"
     },
     {
-        "name": "pump2",
+        "name": "pump_coke",
         "pin": 70,
         "value": "coke"
     },
