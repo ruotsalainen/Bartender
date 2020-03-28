@@ -101,7 +101,7 @@ class Bartender(Menu):
 
                 # toggle relay on
                 active_pump.on()
-                print(pump["name"] + " on pin " + str(pump_pin) + " is running")
+                print(pump["name"] + " is running")
                 sleep(timeout)
 
                 # toggle relay off
