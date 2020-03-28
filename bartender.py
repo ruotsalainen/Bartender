@@ -21,9 +21,9 @@ BUTTON_TASKS_PIN = 22
 PUMP1_PIN = 26
 PUMP2_PIN = 16
 PUMP3_PIN = 6 
-PUMP3_PIN = 5
-PUMP3_PIN = 25
-PUMP3_PIN = 24
+PUMP4_PIN = 5
+PUMP5_PIN = 25
+PUMP6_PIN = 24
 
 class Bartender(Menu):
     def __init__(self):
