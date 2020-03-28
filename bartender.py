@@ -1,7 +1,7 @@
 import sys
 
 from RPLCD.i2c import CharLCD
-from gpiozero import Button
+from gpiozero import Button, OutputDevice
 from multiprocessing.dummy import Pool
 from time import sleep, time
 
