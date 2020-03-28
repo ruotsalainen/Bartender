@@ -123,13 +123,13 @@ class Bartender(Menu):
         if name == "pump2":
             return self.pump2
         if name == "pump3":
-            return self.pump2
+            return self.pump3
         if name == "pump4":
-            return self.pump2
+            return self.pump4
         if name == "pump5":
-            return self.pump2
+            return self.pump5
         if name == "pump6":
-            return self.pump2
+            return self.pump6
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)
