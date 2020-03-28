@@ -25,7 +25,7 @@ pumps_list =  [
         "value": "oj"
     },
     {
-        "name": "pump7",
+        "name": "pump6",
         "pin": 75,
         "value": "tonic"
     }
