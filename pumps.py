@@ -1,11 +1,11 @@
 pumps_list =  [
     {
-        "name": "pump_rum",
+        "name": "pump1",
         "pin": 26,
         "value": "rum"
     },
     {
-        "name": "pump_coke",
+        "name": "pump2",
         "pin": 70,
         "value": "coke"
     },
@@ -25,18 +25,8 @@ pumps_list =  [
         "value": "oj"
     },
     {
-        "name": "pump6",
-        "pin": 74,
-        "value": "tequila"
-    },
-    {
         "name": "pump7",
         "pin": 75,
         "value": "tonic"
-    },
-    {
-        "name": "pump8",
-        "pin": 76,
-        "value": "mmix"
     }
 ]

@@ -41,10 +41,6 @@ drink_list = [
                 "amount": 15
             },
             {
-                "ingredient": "tequila",
-                "amount": 15
-            },
-            {
                 "ingredient": "coke",
                 "amount": 100
             },
@@ -68,36 +64,10 @@ drink_list = [
         ]
     },
     {
-        "name": "Margarita",
-        "ingredients": [
-            {
-                "ingredient": "tequila",
-                "amount": 50
-            },
-            {
-                "ingredient": "mmix",
-                "amount": 150
-            }
-        ]
-    },
-    {
         "name": "Gin & Juice",
         "ingredients": [
             {
                 "ingredient": "gin",
-                "amount": 50
-            },
-            {
-                "ingredient": "oj",
-                "amount": 150
-            }
-        ]
-    },
-    {
-        "name": "Tequila Sunrise",
-        "ingredients": [
-            {
-                "ingredient": "tequila",
                 "amount": 50
             },
             {

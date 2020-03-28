@@ -18,8 +18,12 @@ BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_TASKS_PIN = 22
 
-PUMP_PIN_RUM = 26
-PUMP_PIN_COKE = 16
+PUMP1_PIN = 26
+PUMP2_PIN = 16
+PUMP3_PIN = 6 
+PUMP3_PIN = 5
+PUMP3_PIN = 25
+PUMP3_PIN = 24
 
 class Bartender(Menu):
     def __init__(self):
@@ -31,8 +35,12 @@ class Bartender(Menu):
         self.button_tasks = Button(BUTTON_TASKS_PIN)
 
         # declaring pumps
-        self.pump_rum = OutputDevice(PUMP_PIN_RUM, active_high=False, initial_value=False)
-        self.pump_coke = OutputDevice(PUMP_PIN_COKE, active_high=False, initial_value=False)
+        self.pump1 = OutputDevice(PUMP1_PIN, active_high=False, initial_value=False)
+        self.pump2 = OutputDevice(PUMP2_PIN, active_high=False, initial_value=False)
+        self.pump3 = OutputDevice(PUMP3_PIN, active_high=False, initial_value=False)
+        self.pump4 = OutputDevice(PUMP4_PIN, active_high=False, initial_value=False)
+        self.pump5 = OutputDevice(PUMP5_PIN, active_high=False, initial_value=False)
+        self.pump6 = OutputDevice(PUMP6_PIN, active_high=False, initial_value=False)
 
         # creating an object of the class CharLCD
         self.lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
@@ -110,10 +118,18 @@ class Bartender(Menu):
                 print(pump["name"] + " off")
 
     def get_pump(self, name):
-        if name == "pump_rum":
-            return self.pump_rum
-        if name == "pump_coke":
-            return self.pump_coke
+        if name == "pump1":
+            return self.pump1
+        if name == "pump2":
+            return self.pump2
+        if name == "pump3":
+            return self.pump2
+        if name == "pump4":
+            return self.pump2
+        if name == "pump5":
+            return self.pump2
+        if name == "pump6":
+            return self.pump2
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)
