@@ -16,8 +16,12 @@ RELAY_PIN = 17
 # create a relay object.
 # Triggered by the output pin going low: active_high=False.
 # Initially off: initial_value=False
-relay = gpiozero.OutputDevice(26, active_high=False, initial_value=False)
+relay1 = gpiozero.OutputDevice(26, active_high=False, initial_value=False)
 relay2 = gpiozero.OutputDevice(16, active_high=True, initial_value=False)
+relay3 = gpiozero.OutputDevice(6, active_high=False, initial_value=False)
+relay4 = gpiozero.OutputDevice(5, active_high=True, initial_value=False)
+relay5 = gpiozero.OutputDevice(25, active_high=False, initial_value=False)
+relay6 = gpiozero.OutputDevice(24, active_high=True, initial_value=False)
 
 
 def set_relay(status):
@@ -32,8 +36,12 @@ def set_relay(status):
 
 def toggle_relay():
     print("toggling relay")
-    relay.toggle()
+    relay1.toggle()
     relay2.toggle()
+    relay3.toggle()
+    relay4.toggle()
+    relay5.toggle()
+    relay6.toggle()
 
 
 def main_loop():
