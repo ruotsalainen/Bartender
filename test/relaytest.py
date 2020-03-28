@@ -16,8 +16,8 @@ RELAY_PIN = 17
 # create a relay object.
 # Triggered by the output pin going low: active_high=False.
 # Initially off: initial_value=False
-relay = gpiozero.OutputDevice(RELAY_PIN, active_high=False, initial_value=False)
-relay2 = gpiozero.OutputDevice(27, active_high=True, initial_value=False)
+relay = gpiozero.OutputDevice(26, active_high=False, initial_value=False)
+relay2 = gpiozero.OutputDevice(16, active_high=True, initial_value=False)
 
 
 def set_relay(status):
