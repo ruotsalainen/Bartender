@@ -30,6 +30,8 @@ class Bartender(Menu):
         self.button_advance = Button(BUTTON_ADVANCE_PIN)
         self.button_tasks = Button(BUTTON_TASKS_PIN)
 
+        # declaring pumps
+        self.pump_rum = OutputDevice(RELAY_PIN, active_high=False, initial_value=False)
 
         # creating an object of the class CharLCD
         self.lcd = CharLCD(i2c_expander='PCF8574', address=0x27, port=1,
@@ -94,16 +96,21 @@ class Bartender(Menu):
         timeout = ingredient["amount"] / FLOWRATE
         for pump in pumps_list:
             if pump["value"] == ingredient["ingredient"]:
-                pump_pin = pump["pin"]
-                # declaring pump
-                pump = OutputDevice(pump_pin, active_high=False, initial_value=False)
+                # getting pump
+                active_pump = self.get_pump(pump["name"])
+
                 # toggle relay on
-                pump.on()
+                active_pump.on()
                 print(pump["name"] + " on pin " + str(pump_pin) + " is running")
                 sleep(timeout)
+
                 # toggle relay off
-                pump.off()
+                active_pump.off()
                 print(pump["name"] + " off")
+
+    def get_pump(self, name):
+        if name == "pump_rum":
+            return self.pump_rum
 
     def run(self):
         self.draw_frame(self.lcd, 0.05)
