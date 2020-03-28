@@ -77,7 +77,6 @@ class Bartender(Menu):
         self.lcd.write_string("Coming right up!")
         sleep(2)
         self.lcd.cursor_pos = (2, 2)
-        self.lcd.write_string("                ")
         self.run_threads(ingredients)
 
     # executes a task based on id
@@ -99,6 +98,7 @@ class Bartender(Menu):
         pool.map(self.run_pump, ingredients)
         pool.close()
         pool.join()
+        self.lcd.write_string("                ")
         print("Drink ready")
 
     def run_pump(self, ingredient):
