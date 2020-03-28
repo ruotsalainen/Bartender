@@ -18,6 +18,8 @@ BUTTON_SELECT_PIN = 17
 BUTTON_ADVANCE_PIN = 27
 BUTTON_TASKS_PIN = 22
 
+RELAY_PIN = 26
+
 
 class Bartender(Menu):
     def __init__(self):
@@ -92,11 +94,13 @@ class Bartender(Menu):
         for pump in pumps_list:
             if pump["value"] == ingredient["ingredient"]:
                 pump_pin = pump["pin"]
-                # TODO
+                pump = OutputDevice(pump_pin, active_high=False, initial_value=False)
                 # toggle relay on
+                pump.on()
                 print(pump["name"] + " on pin " + str(pump_pin) + " is running")
                 sleep(timeout)
                 # toggle relay off
+                pump.off()
                 print(pump["name"] + " off")
 
     def run(self):

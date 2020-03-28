@@ -1,7 +1,7 @@
 pumps_list =  [
     {
         "name": "pump1",
-        "pin": 69,
+        "pin": 26,
         "value": "rum"
     },
     {
