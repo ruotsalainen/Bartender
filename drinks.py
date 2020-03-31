@@ -13,40 +13,15 @@ drink_list = [
         ]
     },
     {
-        "name": "Gin & Tonic",
+        "name": "Gin & Sprite",
         "ingredients": [
             {
                 "ingredient": "gin",
                 "amount": 50
             },
             {
-                "ingredient": "tonic",
+                "ingredient": "sprite",
                 "amount": 150
-            }
-        ]
-    },
-    {
-        "name": "Long Island",
-        "ingredients": [
-            {
-                "ingredient": "gin",
-                "amount": 15
-            },
-            {
-                "ingredient": "rum",
-                "amount": 15
-            },
-            {
-                "ingredient": "vodka",
-                "amount": 15
-            },
-            {
-                "ingredient": "coke",
-                "amount": 100
-            },
-            {
-                "ingredient": "oj",
-                "amount": 30
             }
         ]
     },
@@ -74,6 +49,43 @@ drink_list = [
                 "ingredient": "oj",
                 "amount": 150
             }
+        ]
+    },
+    {
+        "name": "Vodka & Cola",
+        "ingredients": [
+            {
+                "ingredient": "vodka",
+                "amount": 50
+            },
+            {
+                "ingredient": "coke",
+                "amount": 150
+            }
+        ]
+    }
+    {
+        "name": "Vodka shot",
+        "ingredients": [
+            {
+                "ingredient": "vodka",
+                "amount": 49.5
+            }
+        ]
+    },
+    {
+        "name": "",
+        "ingredients": [
+            {
+                "ingredient": "",
+                "amount": 69
+            }
+        ]
+    },
+    {
+        "name": "",
+        "ingredients": [
+            {}
         ]
     }
 ]
