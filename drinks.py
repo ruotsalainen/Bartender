@@ -63,7 +63,7 @@ drink_list = [
                 "amount": 150
             }
         ]
-    }
+    },
     {
         "name": "Vodka shot",
         "ingredients": [
