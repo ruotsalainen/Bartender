@@ -27,10 +27,10 @@ relay6 = gpiozero.OutputDevice(24, active_high=True, initial_value=False)
 def set_relay(status):
     if status:
         print("Setting relay: ON")
-        relay.on()
+        relay1.on()
     else:
         print("Setting relay: OFF")
-        relay.off()
+        relay1.off()
         relay2.off()
 
 
