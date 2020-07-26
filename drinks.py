@@ -1,91 +1,38 @@
 drink_list = [
     {
-        "name": "Rum & Coke",
+        "name": "Vodka",
+        "ingredients": [
+            {
+                "ingredient": "vodka",
+                "amount": 50
+            }
+        ]
+    },
+    {
+        "name": "Gin",
+        "ingredients": [
+            {
+                "ingredient": "gin",
+                "amount": 50
+            }
+        ]
+    },
+    {
+        "name": "Rommi",
         "ingredients": [
             {
                 "ingredient": "rum",
                 "amount": 50
-            },
-            {
-                "ingredient": "coke",
-                "amount": 150
             }
         ]
     },
     {
-        "name": "Gin & Sprite",
+        "name": "Myrkky",
         "ingredients": [
             {
-                "ingredient": "gin",
+                "ingredient": "myrkky",
                 "amount": 50
-            },
-            {
-                "ingredient": "sprite",
-                "amount": 150
             }
-        ]
-    },
-    {
-        "name": "Screwdriver",
-        "ingredients": [
-            {
-                "ingredient": "vodka",
-                "amount": 50
-            },
-            {
-                "ingredient": "oj",
-                "amount": 150
-            }
-        ]
-    },
-    {
-        "name": "Gin & Juice",
-        "ingredients": [
-            {
-                "ingredient": "gin",
-                "amount": 50
-            },
-            {
-                "ingredient": "oj",
-                "amount": 150
-            }
-        ]
-    },
-    {
-        "name": "Vodka & Cola",
-        "ingredients": [
-            {
-                "ingredient": "vodka",
-                "amount": 50
-            },
-            {
-                "ingredient": "coke",
-                "amount": 150
-            }
-        ]
-    },
-    {
-        "name": "Vodka shot",
-        "ingredients": [
-            {
-                "ingredient": "vodka",
-                "amount": 49.5
-            }
-        ]
-    },
-    {
-        "name": "",
-        "ingredients": [
-            {
-                "ingredient": "",
-                "amount": 69
-            }
-        ]
-    },
-    {
-        "name": "",
-        "ingredients": [
-            {}
         ]
     }
 ]
