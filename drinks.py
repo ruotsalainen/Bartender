@@ -31,6 +31,10 @@ drink_list = [
         "ingredients": [
             {
                 "ingredient": "myrkky",
+                "amount": 25
+            },
+            {
+                "ingredient": "vodka",
                 "amount": 50
             }
         ]
