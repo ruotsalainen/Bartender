@@ -86,7 +86,6 @@ class Bartender(Menu):
             self.lcd.cursor_pos = (1, 5)
             self.lcd.write_string("Flushing!")
             self.flush()
-            sleep(5)
             current_task_name = system_tasks[self.current_task]["task"]
             padding = int((20-len(current_task_name))/2)
             self.lcd.cursor_pos = (1, padding)
