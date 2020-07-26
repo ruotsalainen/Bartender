@@ -85,7 +85,8 @@ class Bartender(Menu):
             self.clear(self.lcd)
             self.lcd.cursor_pos = (1, 5)
             self.lcd.write_string("Flushing!")
-            sleep(2)
+            self.flush()
+            sleep(5)
             current_task_name = system_tasks[self.current_task]["task"]
             padding = int((20-len(current_task_name))/2)
             self.lcd.cursor_pos = (1, padding)
@@ -116,6 +117,15 @@ class Bartender(Menu):
                 # toggle relay off
                 active_pump.off()
                 print(pump["name"] + " off")
+
+    def flush(self):
+        for pump in pumps_list:
+                active_pump = self.get_pump(pump["name"])
+                active_pump.on()
+        sleep(5)    
+        for pump in pumps_list:
+                active_pump = self.get_pump(pump["name"])
+                active_pump.off()
 
     def get_pump(self, name):
         if name == "pump1":
