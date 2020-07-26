@@ -1,4 +1,5 @@
 from time import sleep
+import os
 
 class System():
     def __init__(self):
@@ -187,6 +188,7 @@ class System():
         sleep(2)
         lcd.backlight_enabled = False
         lcd.clear()
+        os.system("sudo poweroff")
         exit()
 
     # custom clear function to clear all but frame
