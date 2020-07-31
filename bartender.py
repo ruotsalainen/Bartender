@@ -12,7 +12,7 @@ from drinks import drink_list
 from pumps import pumps_list
 
 BOUNCE = 0.2
-FLOWRATE = 15  # ml/sec
+FLOWRATE = 2.5  # ml/sec
 
 BUTTON_SELECT_PIN = 22
 BUTTON_ADVANCE_PIN = 17

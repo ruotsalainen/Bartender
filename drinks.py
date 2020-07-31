@@ -31,11 +31,11 @@ drink_list = [
         "ingredients": [
             {
                 "ingredient": "myrkky",
-                "amount": 25
+                "amount": 15
             },
             {
                 "ingredient": "vodka",
-                "amount": 50
+                "amount": 35
             }
         ]
     },
