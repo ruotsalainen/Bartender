@@ -5,7 +5,7 @@ pumps_list =  [
     },
     {
         "name": "pump2",
-        "value": "gin"
+        "value": "tequila"
     },
     {
         "name": "pump3",
@@ -17,10 +17,10 @@ pumps_list =  [
     },
     {
         "name": "pump5",
-        "value": ""
+        "value": "minttusuklaa"
     },
     {
         "name": "pump6",
-        "value": ""
+        "value": "fisu"
     }
 ]
