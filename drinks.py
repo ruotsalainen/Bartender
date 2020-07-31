@@ -9,10 +9,10 @@ drink_list = [
         ]
     },
     {
-        "name": "Gin",
+        "name": "Tequila",
         "ingredients": [
             {
-                "ingredient": "gin",
+                "ingredient": "tequila",
                 "amount": 50
             }
         ]
@@ -37,6 +37,30 @@ drink_list = [
                 "ingredient": "vodka",
                 "amount": 50
             }
+        ]
+    },
+    {
+        "name": "Fisu",
+        "ingredients": [
+            {
+                "ingredient": "fisu",
+                "amount": 50
+            }
+        ]
+    },
+    {
+        "name": "Minttusuklaa",
+        "ingredients": [
+            {
+                "ingredient": "minttusuklaa",
+                "amount": 50
+            }
+        ]
+    },
+    {
+        "name": "Ylläri",
+        "ingredients": [
+            {}
         ]
     }
 ]
