@@ -56,11 +56,5 @@ drink_list = [
                 "amount": 50
             }
         ]
-    },
-    {
-        "name": "Ylläri",
-        "ingredients": [
-            {}
-        ]
     }
 ]
